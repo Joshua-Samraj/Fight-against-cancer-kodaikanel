@@ -12,14 +12,14 @@ const HeroSection = () => {
           Together, we stand strong against cancer through education, support, and hope. 
           Join our community in the fight for cancer awareness and prevention.
         </p>
-        <div className="flex flex-wrap justify-center gap-4">
+        {/* <div className="flex flex-wrap justify-center gap-4">
           <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
             Get Involved
           </button>
           <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-colors">
             Learn More
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

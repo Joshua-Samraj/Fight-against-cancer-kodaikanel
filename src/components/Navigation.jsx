@@ -32,7 +32,7 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
                 }`}
               >
                 <gallery.icon size={16} className="inline mr-2" />
-                {gallery.title.split(' ')[0]}
+                {gallery.title}
               </button>
             ))}
           </div>
