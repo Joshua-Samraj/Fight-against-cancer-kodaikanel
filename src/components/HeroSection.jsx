@@ -8,10 +8,10 @@ const HeroSection = () => {
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in leading-tight">
           Kodaikanel Cancer Awareness Initiative
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 opacity-90 max-w-3xl mx-auto px-2">
+        {/* <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 opacity-90 max-w-3xl mx-auto px-2">
           Together, we stand strong against cancer through education, support, and hope. 
           Join our community in the fight for cancer awareness and prevention.
-        </p>
+        </p> */}
         {/* <div className="flex flex-wrap justify-center gap-4">
           <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
             Get Involved
