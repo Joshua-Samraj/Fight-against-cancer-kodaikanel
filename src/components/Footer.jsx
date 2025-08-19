@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2024 Kodaikanel Cancer Awareness Initiative. All rights reserved.</p>
+          <p>&copy; Living Hope Charitable Trust. All rights reserved.</p>
           <p className="mt-2">Together, we can make a difference in the fight against cancer.</p>
         </div>
       </div>
