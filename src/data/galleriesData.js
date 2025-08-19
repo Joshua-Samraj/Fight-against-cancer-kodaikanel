@@ -50,22 +50,7 @@ export const GALLERIES_DATA = {
       alt: "Cancer Survivors Day 2 Card"
     },
     images: [
-      {
-        id: 3,
-        url: "/images/survivor1.jpg",
-        src: "/images/survivor1.jpg",
-        alt: "Cancer survivor story 1",
-        caption: "Survivor Stories Day 2",
-        description: "Inspiring stories from cancer survivors in our community"
-      },
-      {
-        id: 4,
-        url: "/images/survivor2.jpg",
-        src: "/images/survivor2.jpg",
-        alt: "Cancer survivor story 2",
-        caption: "Hope and Resilience",
-        description: "Celebrating the strength and courage of survivors"
-      }
+      
     ]
   },
   community: {
@@ -80,22 +65,7 @@ export const GALLERIES_DATA = {
       alt: "Community Support Day 3 Card"
     },
     images: [
-      {
-        id: 5,
-        url: "/images/community1.jpg",
-        src: "/images/community1.jpg",
-        alt: "Community support event 1",
-        caption: "Community Support Day 3",
-        description: "Volunteers and caregivers coming together to support patients"
-      },
-      {
-        id: 6,
-        url: "/images/community2.jpg",
-        src: "/images/community2.jpg",
-        alt: "Community support event 2",
-        caption: "Support Network",
-        description: "Building strong community bonds for patient care"
-      }
+      
     ]
   },
   prevention: {
@@ -110,22 +80,7 @@ export const GALLERIES_DATA = {
       alt: "Cancer Prevention Day 4 Card"
     },
     images: [
-      {
-        id: 7,
-        url: "/images/prevention1.jpg",
-        src: "/images/prevention1.jpg",
-        alt: "Cancer prevention event 1",
-        caption: "Prevention Day 4",
-        description: "Promoting healthy lifestyle choices for cancer prevention"
-      },
-      {
-        id: 8,
-        url: "/images/prevention2.jpg",
-        src: "/images/prevention2.jpg",
-        alt: "Cancer prevention event 2",
-        caption: "Wellness Practices",
-        description: "Community wellness activities and health screenings"
-      }
+      
     ]
   }
 };
