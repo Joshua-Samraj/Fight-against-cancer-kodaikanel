@@ -27,8 +27,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Contact Information</h4>
             <div className="text-sm text-gray-300 space-y-2">
               <p>📍 Kodaikanel, Tamil Nadu</p>
-              <p>📞 +91 XXX XXX XXXX</p>
-              <p>✉️ info@kodaikanalcancer.org</p>
+              <a href="tel:+919500561937" className="text-gray-300 hover:text-white transition-colors">📞 +91 9500561937</a>
             </div>
           </div>
         </div>

@@ -76,6 +76,36 @@ const CSS_STYLES = `
     animation: float 3s ease-in-out infinite;
   }
   
+  @keyframes fade-black {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  .animate-fade-black {
+    animation: fade-black 0.6s ease-in-out;
+  }
+  
+  @keyframes image-transition {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  
+  .animate-image-transition {
+    animation: image-transition 0.6s ease-in-out;
+  }
+  
+  /* Autoplay indicator */
+  @keyframes autoplay-pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+  
+  .animate-autoplay-pulse {
+    animation: autoplay-pulse 2s ease-in-out infinite;
+  }
+  
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;

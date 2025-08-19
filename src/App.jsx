@@ -15,9 +15,10 @@ const KadaikanalCancerAwarenessWebsite = () => {
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-  const [isAutoplay, setIsAutoplay] = useState(false);
+  const [isAutoplay, setIsAutoplay] = useState(true);
   const [imageError, setImageError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const autoplayRef = useRef(null);
 
   // Scroll to top function
@@ -48,6 +49,8 @@ const KadaikanalCancerAwarenessWebsite = () => {
     setImagePosition({ x: 0, y: 0 });
     setImageError(false);
     setLoading(true);
+    setIsAutoplay(true); // Enable autoplay by default
+    setIsTransitioning(false);
   }, []);
 
   const handleCloseImageViewer = useCallback(() => {
@@ -55,6 +58,7 @@ const KadaikanalCancerAwarenessWebsite = () => {
     setIsAutoplay(false);
     setImageZoom(1);
     setImagePosition({ x: 0, y: 0 });
+    setIsTransitioning(false);
   }, []);
 
   const handleNavigateImage = useCallback((direction) => {
@@ -129,16 +133,30 @@ const KadaikanalCancerAwarenessWebsite = () => {
     setLoading(true);
   }, []);
 
-  // Auto-play functionality
+  // Auto-play functionality with transition
   useEffect(() => {
     if (isAutoplay && selectedImage) {
       const currentGallery = GALLERIES_DATA[currentPage];
-      if (currentGallery) {
+      if (currentGallery && currentGallery.images && currentGallery.images.length > 1) {
         autoplayRef.current = setInterval(() => {
-          setCurrentImageIndex(prev =>
-            prev === currentGallery.images.length - 1 ? 0 : prev + 1
-          );
-        }, 3000);
+          setIsTransitioning(true);
+          
+          // After transition starts, change the image
+          setTimeout(() => {
+            setCurrentImageIndex(prev =>
+              prev === currentGallery.images.length - 1 ? 0 : prev + 1
+            );
+            setImageZoom(1);
+            setImagePosition({ x: 0, y: 0 });
+            setImageError(false);
+            setLoading(true);
+            
+            // End transition after image change
+            setTimeout(() => {
+              setIsTransitioning(false);
+            }, 300);
+          }, 300);
+        }, 4000); // Increased interval to account for transition time
       }
     } else {
       if (autoplayRef.current) {
@@ -226,6 +244,7 @@ const KadaikanalCancerAwarenessWebsite = () => {
           isAutoplay={isAutoplay}
           loading={loading}
           imageError={imageError}
+          isTransitioning={isTransitioning}
           onClose={handleCloseImageViewer}
           onNavigate={handleNavigateImage}
           onZoomIn={handleZoomIn}

@@ -20,7 +20,7 @@ const ImageViewerControls = ({
   imageZoom
 }) => {
   return (
-    <div className="absolute top-2 sm:top-4 left-2 sm:left-4 right-2 sm:right-4 z-10">
+    <div className="p-2 sm:p-4 bg-black/60 border-b border-white/10">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-1 sm:gap-2 text-white">
           <span className="text-xs sm:text-sm bg-black/50 px-2 sm:px-3 py-1 rounded-full">
@@ -28,7 +28,11 @@ const ImageViewerControls = ({
           </span>
           <button
             onClick={onAutoplayToggle}
-            className="p-1.5 sm:p-2 bg-black/50 rounded-full hover:bg-black/70 transition-colors touch-manipulation"
+            className={`p-1.5 sm:p-2 rounded-full hover:bg-black/70 transition-colors touch-manipulation ${
+              isAutoplay 
+                ? 'bg-blue-600/80 animate-autoplay-pulse' 
+                : 'bg-black/50'
+            }`}
           >
             {isAutoplay ? <Pause size={14} className="sm:w-4 sm:h-4" /> : <Play size={14} className="sm:w-4 sm:h-4" />}
           </button>

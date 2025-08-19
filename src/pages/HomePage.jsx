@@ -13,14 +13,14 @@ const HomePage = ({ galleries, onCardClick }) => {
             Our Cancer Awareness Journey
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">
-            Explore different aspects of our comprehensive approach to cancer awareness, 
+            Explore different aspects of our comprehensive approach to cancer awareness,
             support, and prevention in the Kodaikanel community.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6">
           {Object.entries(galleries).map(([key, gallery]) => (
-            <GalleryCard 
+            <GalleryCard
               key={key}
               galleryKey={key}
               gallery={gallery}
@@ -30,7 +30,7 @@ const HomePage = ({ galleries, onCardClick }) => {
         </div>
       </div>
 
-      <div className="bg-gray-800 text-white py-16">
+      {/* <div className="bg-gray-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Join Our Mission</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
@@ -41,7 +41,7 @@ const HomePage = ({ galleries, onCardClick }) => {
             Get Involved Today
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
