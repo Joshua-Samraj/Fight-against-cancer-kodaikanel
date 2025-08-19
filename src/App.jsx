@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
 import GalleryPage from './pages/GalleryPage';
@@ -20,13 +20,122 @@ const KadaikanalCancerAwarenessWebsite = () => {
   const [loading, setLoading] = useState(false);
   const autoplayRef = useRef(null);
 
+  // Scroll to top function
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, []);
+
+  // Event Handlers - Define all handlers first
+  const handlePageChange = useCallback((page) => {
+    setCurrentPage(page);
+    setSelectedImage(null);
+    scrollToTop();
+  }, [scrollToTop]);
+
+  const handleCardClick = useCallback((galleryKey) => {
+    setCurrentPage(galleryKey);
+    scrollToTop();
+  }, [scrollToTop]);
+
+  const handleImageClick = useCallback((image, index) => {
+    setSelectedImage(image);
+    setCurrentImageIndex(index);
+    setImageZoom(1);
+    setImagePosition({ x: 0, y: 0 });
+    setImageError(false);
+    setLoading(true);
+  }, []);
+
+  const handleCloseImageViewer = useCallback(() => {
+    setSelectedImage(null);
+    setIsAutoplay(false);
+    setImageZoom(1);
+    setImagePosition({ x: 0, y: 0 });
+  }, []);
+
+  const handleNavigateImage = useCallback((direction) => {
+    const currentGallery = GALLERIES_DATA[currentPage];
+    if (!currentGallery) return;
+
+    const newIndex = currentImageIndex + direction;
+    if (newIndex >= 0 && newIndex < currentGallery.images.length) {
+      setCurrentImageIndex(newIndex);
+      setImageZoom(1);
+      setImagePosition({ x: 0, y: 0 });
+      setImageError(false);
+      setLoading(true);
+    }
+  }, [currentPage, currentImageIndex]);
+
+  const handleZoomIn = useCallback(() => {
+    setImageZoom(prev => Math.min(prev + 0.5, 4));
+  }, []);
+
+  const handleZoomOut = useCallback(() => {
+    setImageZoom(prev => Math.max(prev - 0.5, 0.5));
+  }, []);
+
+  const handleResetZoom = useCallback(() => {
+    setImageZoom(1);
+    setImagePosition({ x: 0, y: 0 });
+  }, []);
+
+  const handleAutoplayToggle = useCallback(() => {
+    setIsAutoplay(prev => !prev);
+  }, []);
+
+  const handleMouseDown = useCallback((e) => {
+    if (imageZoom > 1) {
+      setIsDragging(true);
+      setDragStart({
+        x: e.clientX - imagePosition.x,
+        y: e.clientY - imagePosition.y
+      });
+    }
+  }, [imageZoom, imagePosition.x, imagePosition.y]);
+
+  const handleMouseMove = useCallback((e) => {
+    if (isDragging && imageZoom > 1) {
+      setImagePosition({
+        x: e.clientX - dragStart.x,
+        y: e.clientY - dragStart.y
+      });
+    }
+  }, [isDragging, imageZoom, dragStart.x, dragStart.y]);
+
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  const handleImageLoad = useCallback(() => {
+    setLoading(false);
+    setImageError(false);
+  }, []);
+
+  const handleImageError = useCallback(() => {
+    setLoading(false);
+    setImageError(true);
+  }, []);
+
+  const handleImageIndexChange = useCallback((index) => {
+    setCurrentImageIndex(index);
+    setImageZoom(1);
+    setImagePosition({ x: 0, y: 0 });
+    setImageError(false);
+    setLoading(true);
+  }, []);
+
   // Auto-play functionality
   useEffect(() => {
     if (isAutoplay && selectedImage) {
       const currentGallery = GALLERIES_DATA[currentPage];
       if (currentGallery) {
         autoplayRef.current = setInterval(() => {
-          setCurrentImageIndex(prev => 
+          setCurrentImageIndex(prev =>
             prev === currentGallery.images.length - 1 ? 0 : prev + 1
           );
         }, 3000);
@@ -43,13 +152,18 @@ const KadaikanalCancerAwarenessWebsite = () => {
     };
   }, [isAutoplay, selectedImage, currentPage]);
 
+  // Scroll to top when page changes
+  useEffect(() => {
+    scrollToTop();
+  }, [currentPage, scrollToTop]);
+
   // Keyboard navigation
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (selectedImage) {
         const currentGallery = GALLERIES_DATA[currentPage];
         if (!currentGallery) return;
-        
+
         switch (e.key) {
           case 'Escape':
             handleCloseImageViewer();
@@ -76,116 +190,18 @@ const KadaikanalCancerAwarenessWebsite = () => {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [selectedImage, currentImageIndex, currentPage]);
-
-  // Event Handlers
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-    setSelectedImage(null);
-  };
-
-  const handleCardClick = (galleryKey) => {
-    setCurrentPage(galleryKey);
-  };
-
-  const handleImageClick = (image, index) => {
-    setSelectedImage(image);
-    setCurrentImageIndex(index);
-    setImageZoom(1);
-    setImagePosition({ x: 0, y: 0 });
-    setImageError(false);
-    setLoading(true);
-  };
-
-  const handleCloseImageViewer = () => {
-    setSelectedImage(null);
-    setIsAutoplay(false);
-    setImageZoom(1);
-    setImagePosition({ x: 0, y: 0 });
-  };
-
-  const handleNavigateImage = (direction) => {
-    const currentGallery = GALLERIES_DATA[currentPage];
-    if (!currentGallery) return;
-    
-    const newIndex = currentImageIndex + direction;
-    if (newIndex >= 0 && newIndex < currentGallery.images.length) {
-      setCurrentImageIndex(newIndex);
-      setImageZoom(1);
-      setImagePosition({ x: 0, y: 0 });
-      setImageError(false);
-      setLoading(true);
-    }
-  };
-
-  const handleZoomIn = () => {
-    setImageZoom(prev => Math.min(prev + 0.5, 4));
-  };
-
-  const handleZoomOut = () => {
-    setImageZoom(prev => Math.max(prev - 0.5, 0.5));
-  };
-
-  const handleResetZoom = () => {
-    setImageZoom(1);
-    setImagePosition({ x: 0, y: 0 });
-  };
-
-  const handleAutoplayToggle = () => {
-    setIsAutoplay(prev => !prev);
-  };
-
-  const handleMouseDown = (e) => {
-    if (imageZoom > 1) {
-      setIsDragging(true);
-      setDragStart({
-        x: e.clientX - imagePosition.x,
-        y: e.clientY - imagePosition.y
-      });
-    }
-  };
-
-  const handleMouseMove = (e) => {
-    if (isDragging && imageZoom > 1) {
-      setImagePosition({
-        x: e.clientX - dragStart.x,
-        y: e.clientY - dragStart.y
-      });
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleImageLoad = () => {
-    setLoading(false);
-    setImageError(false);
-  };
-
-  const handleImageError = () => {
-    setLoading(false);
-    setImageError(true);
-  };
-
-  const handleImageIndexChange = (index) => {
-    setCurrentImageIndex(index);
-    setImageZoom(1);
-    setImagePosition({ x: 0, y: 0 });
-    setImageError(false);
-    setLoading(true);
-  };
+  }, [selectedImage, currentImageIndex, currentPage, handleCloseImageViewer, handleNavigateImage, handleZoomIn, handleZoomOut, handleResetZoom]);
 
   return (
     <div className="min-h-screen">
-      <Navigation 
+      <Navigation
         currentPage={currentPage}
         onPageChange={handlePageChange}
         galleries={GALLERIES_DATA}
       />
 
       {currentPage === 'home' ? (
-        <HomePage 
+        <HomePage
           galleries={GALLERIES_DATA}
           onCardClick={handleCardClick}
         />
@@ -197,7 +213,7 @@ const KadaikanalCancerAwarenessWebsite = () => {
           onImageClick={handleImageClick}
         />
       )}
-      
+
       {selectedImage && (
         <ImageViewer
           selectedImage={selectedImage}

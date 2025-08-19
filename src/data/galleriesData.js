@@ -50,7 +50,7 @@ export const GALLERIES_DATA = {
       alt: "Cancer Survivors Day 2 Card"
     },
     images: [
-      
+
     ]
   },
   community: {
@@ -65,7 +65,7 @@ export const GALLERIES_DATA = {
       alt: "Community Support Day 3 Card"
     },
     images: [
-      
+
     ]
   },
   prevention: {
@@ -80,7 +80,7 @@ export const GALLERIES_DATA = {
       alt: "Cancer Prevention Day 4 Card"
     },
     images: [
-      
+
     ]
   }
 };

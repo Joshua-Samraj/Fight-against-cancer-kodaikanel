@@ -27,16 +27,38 @@ const GalleryPage = ({ currentPage, galleries, onPageChange, onImageClick }) => 
       </div>
 
       <div className="container mx-auto px-4 py-8 sm:py-12">
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
-          {gallery.images.map((image, index) => (
-            <GalleryImage
-              key={image.id}
-              image={image}
-              index={index}
-              onImageClick={onImageClick}
-            />
-          ))}
-        </div>
+        {gallery.images && gallery.images.length > 0 ? (
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
+            {gallery.images.map((image, index) => (
+              <GalleryImage
+                key={image.id}
+                image={image}
+                index={index}
+                onImageClick={onImageClick}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center py-16 sm:py-24">
+            <div className="text-center animate-fade-in">
+              <div className="animate-float">
+                <gallery.icon size={80} className="mx-auto mb-6 text-gray-400 opacity-50" />
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-600 mb-4">
+                Coming Soon
+              </h2>
+              <p className="text-base sm:text-lg text-gray-500 max-w-md mx-auto mb-8">
+                We're working hard to bring you amazing content for this gallery. 
+                Check back soon for updates!
+              </p>
+              <div className="flex justify-center space-x-2">
+                <div className="w-3 h-3 bg-gray-400 rounded-full animate-bounce-dots"></div>
+                <div className="w-3 h-3 bg-gray-400 rounded-full animate-bounce-dots"></div>
+                <div className="w-3 h-3 bg-gray-400 rounded-full animate-bounce-dots"></div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

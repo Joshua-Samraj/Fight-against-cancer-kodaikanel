@@ -44,6 +44,38 @@ const CSS_STYLES = `
     animation: slide-up 0.3s ease-out forwards;
   }
   
+  @keyframes bounce-dots {
+    0%, 80%, 100% { 
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+    40% { 
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  }
+  
+  .animate-bounce-dots {
+    animation: bounce-dots 1.4s infinite ease-in-out;
+  }
+  
+  .animate-bounce-dots:nth-child(1) {
+    animation-delay: -0.32s;
+  }
+  
+  .animate-bounce-dots:nth-child(2) {
+    animation-delay: -0.16s;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -60,6 +92,19 @@ const CSS_STYLES = `
   
   html {
     scroll-behavior: smooth;
+  }
+  
+  /* Enhanced smooth scrolling for all browsers */
+  * {
+    scroll-behavior: smooth;
+  }
+  
+  /* Ensure smooth scrolling works on mobile */
+  @media (max-width: 768px) {
+    html, body {
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
   }
   
   ::-webkit-scrollbar {

@@ -8,11 +8,11 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Kodaikanel Cancer Awareness</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Dedicated to raising awareness, providing support, and promoting prevention 
+              Dedicated to raising awareness, providing support, and promoting prevention
               in the fight against cancer in our community.
             </p>
           </div>
-          
+
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
@@ -22,7 +22,7 @@ const Footer = () => {
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Resources</a></li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-semibold mb-4">Contact Information</h4>
             <div className="text-sm text-gray-300 space-y-2">
@@ -32,7 +32,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
           <p>&copy; 2024 Kodaikanel Cancer Awareness Initiative. All rights reserved.</p>
           <p className="mt-2">Together, we can make a difference in the fight against cancer.</p>
