@@ -10,6 +10,40 @@ const CSS_STYLES = `
     animation: fade-in 1s ease-out;
   }
   
+  @keyframes slide-down {
+    from { 
+      opacity: 0; 
+      transform: translateY(-10px); 
+      max-height: 0;
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+      max-height: 400px;
+    }
+  }
+  
+  @keyframes slide-up {
+    from { 
+      opacity: 1; 
+      transform: translateY(0); 
+      max-height: 400px;
+    }
+    to { 
+      opacity: 0; 
+      transform: translateY(-10px); 
+      max-height: 0;
+    }
+  }
+  
+  .animate-slide-down {
+    animation: slide-down 0.3s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out forwards;
+  }
+  
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -64,6 +98,43 @@ const CSS_STYLES = `
     button {
       min-height: 44px;
       min-width: 44px;
+    }
+  }
+  
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  /* Mobile-specific improvements */
+  @media (max-width: 640px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    /* Improve touch targets on mobile */
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Better text readability on mobile */
+    body {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    
+    /* Prevent zoom on input focus */
+    input, select, textarea {
+      font-size: 16px;
+    }
+  }
+  
+  /* Landscape mobile adjustments */
+  @media (max-width: 896px) and (orientation: landscape) {
+    .hero-section {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
     }
   }
   

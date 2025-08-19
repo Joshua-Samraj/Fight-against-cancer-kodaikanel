@@ -6,11 +6,11 @@ const GalleryCard = ({ galleryKey, gallery, onCardClick }) => {
   return (
     <div
       onClick={() => onCardClick(galleryKey)}
-      className="group cursor-pointer transform transition-all duration-500 hover:scale-105"
+      className="group cursor-pointer transform transition-all duration-500 hover:scale-105 active:scale-95"
     >
-      <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden h-80">
+      <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden h-80 sm:h-80 md:h-80">
         {/* Image Header */}
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-44 sm:h-48 overflow-hidden">
           {cardImage ? (
             <img
               src={cardImage.src}
@@ -34,9 +34,9 @@ const GalleryCard = ({ galleryKey, gallery, onCardClick }) => {
           
           {/* Overlay with title */}
           <div className="absolute inset-0 bg-black/40 flex items-end">
-            <div className="p-4 text-white w-full">
-              <h3 className="text-xl font-bold mb-1">{gallery.title} </h3>
-              <span className="text-sm opacity-90">
+            <div className="p-3 sm:p-4 text-white w-full">
+              <h3 className="text-lg sm:text-xl font-bold mb-1">{gallery.title} </h3>
+              <span className="text-xs sm:text-sm opacity-90">
                 {gallery.images.length} Images
               </span>
             </div>
@@ -44,12 +44,12 @@ const GalleryCard = ({ galleryKey, gallery, onCardClick }) => {
         </div>
         
         {/* Content */}
-        <div className="p-4">
-          <p className="text-gray-600 text-sm leading-relaxed mb-3 line-clamp-3">
+        <div className="p-3 sm:p-4">
+          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-3 line-clamp-3">
             {gallery.description}
           </p>
           <div className="flex justify-end">
-            <span className="text-indigo-600 font-semibold group-hover:text-indigo-800 transition-colors text-sm">
+            <span className="text-indigo-600 font-semibold group-hover:text-indigo-800 transition-colors text-xs sm:text-sm">
               Explore Gallery →
             </span>
           </div>

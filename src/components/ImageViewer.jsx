@@ -71,18 +71,18 @@ const ImageViewer = ({
       {currentImageIndex > 0 && (
         <button
           onClick={() => onNavigate(-1)}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 p-3 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors z-10"
+          className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors z-10 touch-manipulation"
         >
-          <ChevronLeft size={24} />
+          <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
         </button>
       )}
       
       {currentImageIndex < gallery.images.length - 1 && (
         <button
           onClick={() => onNavigate(1)}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 p-3 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors z-10"
+          className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors z-10 touch-manipulation"
         >
-          <ChevronRight size={24} />
+          <ChevronRight size={20} className="sm:w-6 sm:h-6" />
         </button>
       )}
 
@@ -109,29 +109,32 @@ const ImageViewer = ({
         />
       </div>
 
-      <div className="absolute bottom-4 left-4 right-4 text-center z-10">
-        <div className="bg-black/70 text-white p-4 rounded-lg max-w-2xl mx-auto">
-          <h3 className="font-semibold mb-2">{currentImage.caption}</h3>
-          <p className="text-sm opacity-90">{currentImage.description}</p>
+      <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4 text-center z-10">
+        <div className="bg-black/70 text-white p-3 sm:p-4 rounded-lg max-w-2xl mx-auto">
+          <h3 className="font-semibold mb-2 text-sm sm:text-base">{currentImage.caption}</h3>
+          <p className="text-xs sm:text-sm opacity-90 line-clamp-2">{currentImage.description}</p>
           
-          <div className="flex justify-center gap-2 mt-4 text-xs">
+          <div className="flex justify-center gap-2 mt-3 sm:mt-4 text-xs">
             <span className="bg-white/20 px-2 py-1 rounded">
               Zoom: {Math.round(imageZoom * 100)}%
             </span>
-            <span className="bg-white/20 px-2 py-1 rounded">
+            <span className="bg-white/20 px-2 py-1 rounded hidden sm:inline">
               Use arrow keys to navigate
+            </span>
+            <span className="bg-white/20 px-2 py-1 rounded sm:hidden">
+              Swipe to navigate
             </span>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="flex gap-2 bg-black/50 p-2 rounded-lg">
+      <div className="absolute bottom-16 sm:bottom-20 left-1/2 transform -translate-x-1/2 z-10 max-w-full overflow-x-auto">
+        <div className="flex gap-1 sm:gap-2 bg-black/50 p-2 rounded-lg">
           {gallery.images.map((img, index) => (
             <button
               key={img.id}
               onClick={() => onImageIndexChange(index)}
-              className={`w-12 h-8 rounded overflow-hidden border-2 transition-all ${
+              className={`w-10 h-6 sm:w-12 sm:h-8 rounded overflow-hidden border-2 transition-all flex-shrink-0 touch-manipulation ${
                 index === currentImageIndex ? 'border-white' : 'border-transparent hover:border-gray-300'
               }`}
             >

@@ -5,9 +5,9 @@ const GalleryImage = ({ image, index, onImageClick }) => {
   return (
     <div
       onClick={() => onImageClick(image, index)}
-      className="group cursor-pointer bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105"
+      className="group cursor-pointer bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 active:scale-95 touch-manipulation"
     >
-      <div className="relative overflow-hidden h-48">
+      <div className="relative overflow-hidden h-32 sm:h-48">
         <img
           src={image.url}
           alt={image.caption}
@@ -18,16 +18,16 @@ const GalleryImage = ({ image, index, onImageClick }) => {
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="absolute bottom-4 left-4 right-4">
-            <ZoomIn className="text-white mb-2" size={24} />
+          <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4">
+            <ZoomIn className="text-white mb-2" size={20} />
           </div>
         </div>
       </div>
-      <div className="p-4">
-        <h3 className="font-semibold text-gray-800 mb-2 text-sm leading-tight">
+      <div className="p-2 sm:p-4">
+        <h3 className="font-semibold text-gray-800 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
           {image.caption}
         </h3>
-        <p className="text-xs text-gray-600 line-clamp-2">
+        <p className="text-xs text-gray-600 line-clamp-2 hidden sm:block">
           {image.description}
         </p>
       </div>

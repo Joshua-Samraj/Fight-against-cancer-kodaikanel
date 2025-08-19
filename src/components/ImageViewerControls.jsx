@@ -20,46 +20,46 @@ const ImageViewerControls = ({
   imageZoom
 }) => {
   return (
-    <div className="absolute top-4 left-4 right-4 z-10">
+    <div className="absolute top-2 sm:top-4 left-2 sm:left-4 right-2 sm:right-4 z-10">
       <div className="flex justify-between items-center">
-        <div className="flex items-center gap-2 text-white">
-          <span className="text-sm bg-black/50 px-3 py-1 rounded-full">
+        <div className="flex items-center gap-1 sm:gap-2 text-white">
+          <span className="text-xs sm:text-sm bg-black/50 px-2 sm:px-3 py-1 rounded-full">
             {currentImageIndex + 1} of {totalImages}
           </span>
           <button
             onClick={onAutoplayToggle}
-            className="p-2 bg-black/50 rounded-full hover:bg-black/70 transition-colors"
+            className="p-1.5 sm:p-2 bg-black/50 rounded-full hover:bg-black/70 transition-colors touch-manipulation"
           >
-            {isAutoplay ? <Pause size={16} /> : <Play size={16} />}
+            {isAutoplay ? <Pause size={14} className="sm:w-4 sm:h-4" /> : <Play size={14} className="sm:w-4 sm:h-4" />}
           </button>
         </div>
         
-        <div className="flex gap-2">
+        <div className="flex gap-1 sm:gap-2">
           <button
             onClick={onZoomOut}
-            className="p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors"
+            className="p-1.5 sm:p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors touch-manipulation"
             disabled={imageZoom <= 0.5}
           >
-            <ZoomOut size={20} />
+            <ZoomOut size={16} className="sm:w-5 sm:h-5" />
           </button>
           <button
             onClick={onZoomIn}
-            className="p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors"
+            className="p-1.5 sm:p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors touch-manipulation"
             disabled={imageZoom >= 4}
           >
-            <ZoomIn size={20} />
+            <ZoomIn size={16} className="sm:w-5 sm:h-5" />
           </button>
           <button
             onClick={onResetZoom}
-            className="p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors"
+            className="p-1.5 sm:p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors touch-manipulation"
           >
-            <RotateCcw size={20} />
+            <RotateCcw size={16} className="sm:w-5 sm:h-5" />
           </button>
           <button
             onClick={onClose}
-            className="p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors"
+            className="p-1.5 sm:p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors touch-manipulation"
           >
-            <X size={20} />
+            <X size={16} className="sm:w-5 sm:h-5" />
           </button>
         </div>
       </div>
