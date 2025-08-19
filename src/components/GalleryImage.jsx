@@ -23,14 +23,14 @@ const GalleryImage = ({ image, index, onImageClick }) => {
           </div>
         </div>
       </div>
-      <div className="p-2 sm:p-4">
+      {/* <div className="p-2 sm:p-4">
         <h3 className="font-semibold text-gray-800 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
           {image.caption}
         </h3>
         <p className="text-xs text-gray-600 line-clamp-2 hidden sm:block">
           {image.description}
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };
