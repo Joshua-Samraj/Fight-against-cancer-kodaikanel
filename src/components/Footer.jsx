@@ -16,10 +16,10 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Support Services</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Volunteer</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Resources</a></li>
+              <li><a href="https://living-hope-charitable-trust-full-s.vercel.app/about" target='blank' className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+              {/* <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Support Services</a></li> */}
+              <li><a href="https://living-hope-charitable-trust-full-s.vercel.app/volunteer" target='blank' className="text-gray-300 hover:text-white transition-colors">Volunteer</a></li>
+              {/* <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Resources</a></li> */}
             </ul>
           </div>
 
@@ -89,7 +89,7 @@ const Footer = () => {
 
           <div className="text-center text-sm text-gray-400 border-t border-gray-800 pt-6">
             <p>&copy; Living Hope Charitable Trust. All rights reserved.</p>
-            <p className="mt-2">Together, we can make a difference in the fight against cancer.</p>
+            {/* <p className="mt-2">Together, we can make a difference in the fight against cancer.</p> */}
           </div>
         </div>
       </div>
