@@ -15,8 +15,7 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
 
   return (
     <nav className="bg-white shadow-sm border-b sticky top-0 z-40">
-      {/* Event Banner */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2">
+      <div className="bg-gradient-to-r from-black to-gray-600 text-white py-2">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-6 text-sm">
             <div className="flex items-center gap-2">
@@ -31,6 +30,7 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
           </div>
         </div>
       </div>
+      {/* Event Banner */}
 
       <div className="container mx-auto px-4 py-3">
         {/* Desktop Navigation */}
