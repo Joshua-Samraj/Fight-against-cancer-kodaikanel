@@ -38,6 +38,18 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
           <div className="flex items-center gap-6">
             {/* Three Logos */}
             <div className="flex items-center gap-4">
+            <img
+                src="van.png"
+                alt="Organization Logo 3"
+                className="h-10 w-auto object-contain"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextElementSibling.style.display = 'flex';
+                }}
+              />
+              <div className="hidden h-10 w-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg items-center justify-center text-white text-xs font-bold">
+                LOGO3
+              </div>
               <img
                 src="pen nalam.png"
                 alt="Organization Logo 1"
@@ -51,6 +63,10 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
                 LOGO1
               </div>
 
+              
+
+              
+
               <img
                 src="logo.jpg"
                 alt="Organization Logo 2"
@@ -62,19 +78,6 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
               />
               <div className="hidden h-10 w-16 bg-gradient-to-r from-green-500 to-green-600 rounded-lg items-center justify-center text-white text-xs font-bold">
                 LOGO2
-              </div>
-
-              <img
-                src="van.png"
-                alt="Organization Logo 3"
-                className="h-10 w-auto object-contain"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextElementSibling.style.display = 'flex';
-                }}
-              />
-              <div className="hidden h-10 w-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg items-center justify-center text-white text-xs font-bold">
-                LOGO3
               </div>
             </div>
 
@@ -129,7 +132,7 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
             {/* Mobile Logos - Smaller */}
             <div className="flex items-center gap-2">
               <img
-                src="pen nalam.png"
+                src="van.png"
                 alt="Logo 1"
                 className="h-8 w-auto object-contain"
                 onError={(e) => {
@@ -142,7 +145,7 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
               </div>
 
               <img
-                src="logo.jpg"
+                src="pen nalam.png"
                 alt="Logo 2"
                 className="h-8 w-auto object-contain"
                 onError={(e) => {
@@ -155,7 +158,7 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
               </div>
 
               <img
-                src="van.png"
+                src="logo.jpg"
                 alt="Logo 3"
                 className="h-8 w-auto object-contain"
                 onError={(e) => {
