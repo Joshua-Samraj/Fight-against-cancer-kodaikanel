@@ -32,9 +32,65 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; Living Hope Charitable Trust. All rights reserved.</p>
-          <p className="mt-2">Together, we can make a difference in the fight against cancer.</p>
+        <div className="border-t border-gray-800 mt-8 pt-8">
+          {/* Partner Logos Section */}
+          <div className="flex flex-col items-center mb-6">
+            <h4 className="text-lg font-semibold mb-4 text-white">Our Partners</h4>
+            <div className="flex items-center justify-center gap-8 flex-wrap">
+              <div className="flex flex-col items-center">
+                <img 
+                  src="pen nalam.png" 
+                  alt="Partner Organization 1" 
+                  className="h-12 w-auto object-contain mb-2 opacity-80 hover:opacity-100 transition-opacity"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextElementSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="hidden h-12 w-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg items-center justify-center text-white text-xs font-bold mb-2 opacity-80 hover:opacity-100 transition-opacity">
+                  PARTNER 1
+                </div>
+                <span className="text-xs text-gray-400">Pen Nalam Hospital</span>
+              </div>
+              
+              <div className="flex flex-col items-center">
+                <img 
+                  src="logo.jpg" 
+                  alt="Partner Organization 2" 
+                  className="h-12 w-auto object-contain mb-2 opacity-80 hover:opacity-100 transition-opacity"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextElementSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="hidden h-12 w-20 bg-gradient-to-r from-green-500 to-green-600 rounded-lg items-center justify-center text-white text-xs font-bold mb-2 opacity-80 hover:opacity-100 transition-opacity">
+                  PARTNER 2
+                </div>
+                <span className="text-xs text-gray-400">Living Hope Charitable Trust</span>
+              </div>
+              
+              <div className="flex flex-col items-center">
+                <img 
+                  src="van.png" 
+                  alt="Van Halen Hospital" 
+                  className="h-12 w-auto object-contain mb-2 opacity-80 hover:opacity-100 transition-opacity"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextElementSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="hidden h-12 w-20 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg items-center justify-center text-white text-xs font-bold mb-2 opacity-80 hover:opacity-100 transition-opacity">
+                  PARTNER 3
+                </div>
+                <span className="text-xs text-gray-400">Van Halen Hospital</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center text-sm text-gray-400 border-t border-gray-800 pt-6">
+            <p>&copy; Living Hope Charitable Trust. All rights reserved.</p>
+            <p className="mt-2">Together, we can make a difference in the fight against cancer.</p>
+          </div>
         </div>
       </div>
     </footer>
