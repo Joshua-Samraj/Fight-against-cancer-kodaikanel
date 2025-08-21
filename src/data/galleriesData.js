@@ -167,7 +167,7 @@ export const GALLERIES_DATA = {
     bgColor: "bg-blue-50",
     textColor: "text-blue-800",
     cardImage: {
-      src: "/assets/Day 1/(11).jpg",
+      src: "/assets/Day 1/banner.jpg",
       alt: "Cancer Awareness Day 1 Card"
     },
     images: [
