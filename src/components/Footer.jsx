@@ -55,7 +55,7 @@ const Footer = () => {
               
               <div className="flex flex-col items-center">
                 <img 
-                  src="logo.jpg" 
+                  src="logo.png" 
                   alt="Partner Organization 2" 
                   className="h-12 w-auto object-contain mb-2 opacity-80 hover:opacity-100 transition-opacity"
                   onError={(e) => {

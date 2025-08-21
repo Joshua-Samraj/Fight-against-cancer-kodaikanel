@@ -68,7 +68,7 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
               
 
               <img
-                src="logo.jpg"
+                src="logo.png"
                 alt="Organization Logo 2"
                 className="h-10 w-auto object-contain"
                 onError={(e) => {
@@ -158,7 +158,7 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
               </div>
 
               <img
-                src="logo.jpg"
+                src="logo.png"
                 alt="Logo 3"
                 className="h-8 w-auto object-contain"
                 onError={(e) => {
