@@ -10,7 +10,7 @@ import {
 export const GALLERIES_DATA = {
   Awareness: {
     title: "Awareness",
-    description: "Inspiring narratives from cancer survivors in Kodaikanel, showcasing resilience, courage, and the power of hope.",
+    description: "Inspiring narratives from cancer survivors , showcasing resilience, courage, and the power of hope in Kodaikanel",
     icon: Calendar,
     color: "from-blue-500 to-blue-800",
     bgColor: "from-blue-500 to-blue-800",
@@ -243,7 +243,7 @@ export const GALLERIES_DATA = {
   },
   awareness: {
     title: "Day 1",
-    description: "Comprehensive information about cancer types, symptoms, and early detection methods for the Kodaikanel community.",
+    description: "“Cancer Awareness Camp in action 🩺✨ Together with our partners, we are taking one step closer to a cancer-free Kodaikanal.”",
     icon: Calendar,
     color: "from-blue-500 to-blue-700",
     bgColor: "bg-blue-50",
@@ -255,12 +255,13 @@ export const GALLERIES_DATA = {
     images: [
       {
         id: 1,
-        url: "/assets/Day 1/(17).jpg",
+        url: "/assets/Day 1/(19).jpg",
         src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
         alt: "Cancer Awareness event 1",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
+      
       {
         id: 1,
         url: "/assets/Day 1/(18).jpg",
@@ -277,9 +278,10 @@ export const GALLERIES_DATA = {
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
+      
       {
-        id: 2,
-        url: "/assets/Day 1/(2).jpg",
+        id: 1,
+        url: "/assets/Day 1/(17).jpg",
         src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
         alt: "Cancer Awareness event 1",
         caption: "Cancer Awareness Day 1",
@@ -312,14 +314,7 @@ export const GALLERIES_DATA = {
         description: "Community gathering for cancer awareness education"
       },
       
-      {
-        id: 6,
-        url: "/assets/Day 1/(6).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
-        description: "Community gathering for cancer awareness education"
-      },
+      
       
       {
         id: 7,
@@ -383,14 +378,7 @@ export const GALLERIES_DATA = {
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      {
-        id: 14,
-        url: "/assets/Day 1/(14).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
-        description: "Community gathering for cancer awareness education"
-      },
+      
       {
         id: 15,
         url: "/assets/Day 1/(15).jpg",
@@ -399,14 +387,7 @@ export const GALLERIES_DATA = {
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      {
-        id: 16,
-        url: "/assets/Day 1/(16).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
-        description: "Community gathering for cancer awareness education"
-      },
+      
       
     ]
   },
