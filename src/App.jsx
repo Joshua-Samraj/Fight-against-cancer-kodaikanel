@@ -5,6 +5,7 @@ import GalleryPage from './pages/GalleryPage';
 import ImageViewer from './components/ImageViewer';
 import Footer from './components/Footer';
 import CustomStyles from './components/CustomStyles';
+import ImageProtection from './components/ImageProtection';
 import { GALLERIES_DATA } from './data/galleriesData';
 
 const KadaikanalCancerAwarenessWebsite = () => {
@@ -211,58 +212,60 @@ const KadaikanalCancerAwarenessWebsite = () => {
   }, [selectedImage, currentImageIndex, currentPage, handleCloseImageViewer, handleNavigateImage, handleZoomIn, handleZoomOut, handleResetZoom]);
 
   return (
-    <div className="min-h-screen">
-      <Navigation
-        currentPage={currentPage}
-        onPageChange={handlePageChange}
-        galleries={GALLERIES_DATA}
-      />
-
-      {currentPage === 'home' ? (
-        <HomePage
-          galleries={GALLERIES_DATA}
-          onCardClick={handleCardClick}
-        />
-      ) : (
-        <GalleryPage
+    <ImageProtection>
+      <div className="min-h-screen">
+        <Navigation
           currentPage={currentPage}
-          galleries={GALLERIES_DATA}
           onPageChange={handlePageChange}
-          onImageClick={handleImageClick}
-        />
-      )}
-
-      {selectedImage && (
-        <ImageViewer
-          selectedImage={selectedImage}
-          currentImageIndex={currentImageIndex}
           galleries={GALLERIES_DATA}
-          currentPage={currentPage}
-          imageZoom={imageZoom}
-          imagePosition={imagePosition}
-          isDragging={isDragging}
-          isAutoplay={isAutoplay}
-          loading={loading}
-          imageError={imageError}
-          isTransitioning={isTransitioning}
-          onClose={handleCloseImageViewer}
-          onNavigate={handleNavigateImage}
-          onZoomIn={handleZoomIn}
-          onZoomOut={handleZoomOut}
-          onResetZoom={handleResetZoom}
-          onAutoplayToggle={handleAutoplayToggle}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onImageLoad={handleImageLoad}
-          onImageError={handleImageError}
-          onImageIndexChange={handleImageIndexChange}
         />
-      )}
 
-      <Footer />
-      <CustomStyles />
-    </div>
+        {currentPage === 'home' ? (
+          <HomePage
+            galleries={GALLERIES_DATA}
+            onCardClick={handleCardClick}
+          />
+        ) : (
+          <GalleryPage
+            currentPage={currentPage}
+            galleries={GALLERIES_DATA}
+            onPageChange={handlePageChange}
+            onImageClick={handleImageClick}
+          />
+        )}
+
+        {selectedImage && (
+          <ImageViewer
+            selectedImage={selectedImage}
+            currentImageIndex={currentImageIndex}
+            galleries={GALLERIES_DATA}
+            currentPage={currentPage}
+            imageZoom={imageZoom}
+            imagePosition={imagePosition}
+            isDragging={isDragging}
+            isAutoplay={isAutoplay}
+            loading={loading}
+            imageError={imageError}
+            isTransitioning={isTransitioning}
+            onClose={handleCloseImageViewer}
+            onNavigate={handleNavigateImage}
+            onZoomIn={handleZoomIn}
+            onZoomOut={handleZoomOut}
+            onResetZoom={handleResetZoom}
+            onAutoplayToggle={handleAutoplayToggle}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onImageLoad={handleImageLoad}
+            onImageError={handleImageError}
+            onImageIndexChange={handleImageIndexChange}
+          />
+        )}
+
+        <Footer />
+        <CustomStyles />
+      </div>
+    </ImageProtection>
   );
 };
 

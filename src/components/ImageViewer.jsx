@@ -113,14 +113,23 @@ const ImageViewer = ({
               <img
                 src={currentImage.url}
                 alt={currentImage.caption}
-                className={`max-w-full max-h-full object-contain select-none transition-all duration-300 ease-in-out ${
+                className={`max-w-full max-h-full object-contain select-none transition-all duration-300 ease-in-out pointer-events-none ${
                   isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
                 }`}
                 style={{
-                  transform: `scale(${imageZoom}) translate(${imagePosition.x}px, ${imagePosition.y}px)`
+                  transform: `scale(${imageZoom}) translate(${imagePosition.x}px, ${imagePosition.y}px)`,
+                  userSelect: 'none',
+                  WebkitUserSelect: 'none',
+                  MozUserSelect: 'none',
+                  msUserSelect: 'none',
+                  WebkitTouchCallout: 'none',
+                  WebkitUserDrag: 'none',
+                  KhtmlUserSelect: 'none'
                 }}
                 onLoad={onImageLoad}
                 onError={onImageError}
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
                 draggable={false}
               />
             </div>
@@ -288,7 +297,7 @@ const ImageViewer = ({
               <img
                 src={currentImage.url}
                 alt={currentImage.caption}
-                className={`select-none transition-all duration-300 ease-in-out ${
+                className={`select-none transition-all duration-300 ease-in-out pointer-events-none ${
                   isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
                 }`}
                 style={{
@@ -297,10 +306,19 @@ const ImageViewer = ({
                   width: 'auto',
                   height: 'auto',
                   objectFit: 'contain',
-                  transform: `scale(${imageZoom}) translate(${imagePosition.x}px, ${imagePosition.y}px)`
+                  transform: `scale(${imageZoom}) translate(${imagePosition.x}px, ${imagePosition.y}px)`,
+                  userSelect: 'none',
+                  WebkitUserSelect: 'none',
+                  MozUserSelect: 'none',
+                  msUserSelect: 'none',
+                  WebkitTouchCallout: 'none',
+                  WebkitUserDrag: 'none',
+                  KhtmlUserSelect: 'none'
                 }}
                 onLoad={onImageLoad}
                 onError={onImageError}
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
                 draggable={false}
               />
             </div>
