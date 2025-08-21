@@ -254,6 +254,7 @@ export const GALLERIES_DATA = {
     },
     images: [
       {
+        
         id: 1,
         url: "/assets/Day 1/(19).jpg",
         src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
