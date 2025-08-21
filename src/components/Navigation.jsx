@@ -39,7 +39,7 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
               <MapPin size={12} />
               <span className="font-medium">Van Allen Hospital, Kodaikanal</span>
             </div>
-            <div className="font-medium">Contact: 9751964563 9500561937</div>
+            <div className="font-medium">Contact: 9751964563 ,9500561937</div>
             <div className="flex items-center justify-center gap-1">
               <Calendar size={12} />
               <span className="font-medium">Cancer Awareness Event: Aug 21-24, 2025</span>
