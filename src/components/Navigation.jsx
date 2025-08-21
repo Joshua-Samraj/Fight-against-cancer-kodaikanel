@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { Home, MapPin, Calendar } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Home, MapPin, Calendar, ChevronUp } from 'lucide-react';
 
 const Navigation = ({ currentPage, onPageChange, galleries }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -11,6 +12,25 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
   const handlePageChange = (page) => {
     onPageChange(page);
     setIsMobileMenuOpen(false); // Close mobile menu after navigation
+  };
+
+  // Handle scroll to show/hide scroll-to-top button
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      setShowScrollTop(scrollTop > 300); // Show button after scrolling 300px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   return (
@@ -258,6 +278,19 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
           </div>
           </div>
       </nav>
+
+      {/* Scroll to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform ${
+          showScrollTop 
+            ? 'translate-y-0 opacity-100 scale-100' 
+            : 'translate-y-16 opacity-0 scale-75 pointer-events-none'
+        }`}
+        aria-label="Scroll to top"
+      >
+        <ChevronUp size={24} />
+      </button>
     </>
   );
 };

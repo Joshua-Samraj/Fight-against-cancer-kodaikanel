@@ -28,7 +28,7 @@ const Footer = () => {
             <div className="text-sm text-gray-300 space-y-2">
               <p>📍Van Allen Hospital, Kodaikanel, Tamil Nadu</p>
               <a href="tel:+919500561937" className="text-gray-300 hover:text-white transition-colors">📞 +91 9500561937</a>
-              <br /><a href="tel:+9751964563" className="text-gray-300 hover:text-white transition-colors">📞 +91 9751964563</a>
+              <br /><a href="tel:+919751964563" className="text-gray-300 hover:text-white transition-colors">📞 +91 9751964563</a>
             </div>
           </div>
         </div>
@@ -39,9 +39,9 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4 text-white">Our Partners</h4>
             <div className="flex items-center justify-center gap-8 flex-wrap">
               <div className="flex flex-col items-center">
-                <img 
-                  src="pen nalam.png" 
-                  alt="Partner Organization 1" 
+                <img
+                  src="pen nalam.png"
+                  alt="Partner Organization 1"
                   className="h-12 w-auto object-contain mb-2 opacity-80 hover:opacity-100 transition-opacity"
                   onError={(e) => {
                     e.target.style.display = 'none';
@@ -53,11 +53,11 @@ const Footer = () => {
                 </div>
                 <span className="text-xs text-gray-400">Pen Nalam Hospital</span>
               </div>
-              
+
               <div className="flex flex-col items-center">
-                <img 
-                  src="logo.png" 
-                  alt="Partner Organization 2" 
+                <img
+                  src="logo.png"
+                  alt="Partner Organization 2"
                   className="h-12 w-auto object-contain mb-2 opacity-80 hover:opacity-100 transition-opacity"
                   onError={(e) => {
                     e.target.style.display = 'none';
@@ -69,11 +69,11 @@ const Footer = () => {
                 </div>
                 <span className="text-xs text-gray-400">Living Hope Charitable Trust</span>
               </div>
-              
+
               <div className="flex flex-col items-center">
-                <img 
-                  src="van.png" 
-                  alt="Van Halen Hospital" 
+                <img
+                  src="van.png"
+                  alt="Van Halen Hospital"
                   className="h-12 w-auto object-contain mb-2 opacity-80 hover:opacity-100 transition-opacity"
                   onError={(e) => {
                     e.target.style.display = 'none';
