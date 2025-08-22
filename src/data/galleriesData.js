@@ -375,10 +375,35 @@ export const GALLERIES_DATA = {
     bgColor: "bg-rose-50",
     textColor: "text-rose-800",
     cardImage: {
-      src: "/assets/Day 2/(1).jpg",
+      src: "/assets/Day 2/(9).jpg",
       alt: "Cancer Survivors Day 2 Card"
     },
     images: [
+      {
+        id: "day2_010",
+        url: "/assets/Day 2/(10).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 1",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day2_011",
+        url: "/assets/Day 2/(11).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 1",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      
+      {
+        id: "day2_009",
+        url: "/assets/Day 2/(9).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 1",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
       {
         id: "day2_001",
         url: "/assets/Day 2/(1).jpg",
@@ -395,14 +420,7 @@ export const GALLERIES_DATA = {
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
       },
-      {
-        id: "day2_003",
-        url: "/assets/Day 2/(3).jpg",
-        src: "",
-        alt: "Cancer Survivors Day 2 event 3",
-        caption: "Cancer Survivors Day 2",
-        description: "Inspiring stories from cancer survivors"
-      },
+      
       {
         id: "day2_004",
         url: "/assets/Day 2/(4).jpg",
@@ -427,6 +445,7 @@ export const GALLERIES_DATA = {
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
       },
+      
       {
         id: "day2_007",
         url: "/assets/Day 2/(7).jpg",
@@ -442,7 +461,15 @@ export const GALLERIES_DATA = {
         alt: "Cancer Survivors Day 2 event 8",
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
-      }
+      },
+      {
+        id: "day2_003",
+        url: "/assets/Day 2/(3).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 3",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
     ]
   },
   community: {
