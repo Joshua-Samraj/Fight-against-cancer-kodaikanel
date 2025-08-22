@@ -253,14 +253,7 @@ export const GALLERIES_DATA = {
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      {
-        id: "day2_014",
-        url: "/assets/Day 2/(14).jpg",
-        src: "",
-        alt: "Cancer Survivors Day 2 event 3",
-        caption: "Cancer Survivors Day 2",
-        description: "Inspiring stories from cancer survivors"
-      },
+      
       {
         id: "day1_002",
         url: "/assets/Day 1/(18).jpg",
@@ -383,7 +376,7 @@ export const GALLERIES_DATA = {
     bgColor: "bg-rose-50",
     textColor: "text-rose-800",
     cardImage: {
-      src: "/assets/Day 2/banner.jpg",
+      src: "/assets/Day 2/(15).jpg",
       alt: "Cancer Survivors Day 2 Card"
     },
     images: [
@@ -400,6 +393,14 @@ export const GALLERIES_DATA = {
         url: "/assets/Day 2/(11).jpg",
         src: "",
         alt: "Cancer Survivors Day 2 event 1",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day2_014",
+        url: "/assets/Day 2/(14).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 3",
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
       },
