@@ -526,6 +526,22 @@ export const GALLERIES_DATA = {
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
       },
+      {
+        id: "day2_019",
+        url: "/assets/Day 2/(19).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 3",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day2_020",
+        url: "/assets/Day 2/(20).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 3",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
     ]
   },
   community: {
