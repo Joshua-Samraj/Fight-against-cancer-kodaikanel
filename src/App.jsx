@@ -34,12 +34,31 @@ const KadaikanalCancerAwarenessWebsite = () => {
   // Event Handlers - Define all handlers first
   const handlePageChange = useCallback((page) => {
     setCurrentPage(page);
+    // Close image viewer and reset all states when changing pages
     setSelectedImage(null);
+    setCurrentImageIndex(0);
+    setImageZoom(1);
+    setImagePosition({ x: 0, y: 0 });
+    setIsAutoplay(false);
+    setImageError(false);
+    setLoading(false);
+    setIsTransitioning(false);
+    setIsDragging(false);
     scrollToTop();
   }, [scrollToTop]);
 
   const handleCardClick = useCallback((galleryKey) => {
     setCurrentPage(galleryKey);
+    // Close image viewer and reset all states when changing pages
+    setSelectedImage(null);
+    setCurrentImageIndex(0);
+    setImageZoom(1);
+    setImagePosition({ x: 0, y: 0 });
+    setIsAutoplay(false);
+    setImageError(false);
+    setLoading(false);
+    setIsTransitioning(false);
+    setIsDragging(false);
     scrollToTop();
   }, [scrollToTop]);
 
@@ -171,8 +190,18 @@ const KadaikanalCancerAwarenessWebsite = () => {
     };
   }, [isAutoplay, selectedImage, currentPage]);
 
-  // Scroll to top when page changes
+  // Reset image viewer state when page changes
   useEffect(() => {
+    // Close image viewer and reset all states when page changes
+    setSelectedImage(null);
+    setCurrentImageIndex(0);
+    setImageZoom(1);
+    setImagePosition({ x: 0, y: 0 });
+    setIsAutoplay(false);
+    setImageError(false);
+    setLoading(false);
+    setIsTransitioning(false);
+    setIsDragging(false);
     scrollToTop();
   }, [currentPage, scrollToTop]);
 

@@ -1,10 +1,5 @@
 import {
-  Heart,
-  Users,
-  BookOpen,
-  // calendar,
-  Calendar,
-  Smile
+  Calendar
 } from 'lucide-react';
 
 export const GALLERIES_DATA = {
@@ -21,229 +16,226 @@ export const GALLERIES_DATA = {
     },
     images: [
       {
-        id: 1,
+        id: "awareness_001",
         url: "/assets/Awareness/(1).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
+        src: "",
         alt: "Cancer Awareness event 1",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 2,
+        id: "awareness_002",
         url: "/assets/Awareness/(2).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
-        description: "Community gathering for cancer awareness education"
-      },
-      
-      {
-        id: 4,
-        url: "/assets/Awareness/(4).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 2",
+        caption: "Cancer Awareness Day 2",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 5,
-        url: "/assets/Awareness/(5).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
-        description: "Community gathering for cancer awareness education"
-      },
-      {
-        id: 6,
-        url: "/assets/Awareness/(6).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
-        description: "Community gathering for cancer awareness education"
-      },
-      {
-        id: 7,
-        url: "/assets/Awareness/(7).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
-        description: "Community gathering for cancer awareness education"
-      },
-      {
-        id: 8,
-        url: "/assets/Awareness/(8).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
-        description: "Community gathering for cancer awareness education"
-      },
-      {
-        id: 9,
-        url: "/assets/Awareness/(9).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
-        description: "Community gathering for cancer awareness education"
-      },
-      {
-        id: 10,
-        url: "/assets/Awareness/(10).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
-        description: "Community gathering for cancer awareness education"
-      },
-      {
-        id: 11,
-        url: "/assets/Awareness/(11).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
-        description: "Community gathering for cancer awareness education"
-      },
-      {
-        id: 3,
+        id: "awareness_003",
         url: "/assets/Awareness/(3).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 3",
+        caption: "Cancer Awareness Day 3",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 12,
+        id: "awareness_004",
+        url: "/assets/Awareness/(4).jpg",
+        src: "",
+        alt: "Cancer Awareness event 4",
+        caption: "Cancer Awareness Day 4",
+        description: "Community gathering for cancer awareness education"
+      },
+      {
+        id: "awareness_005",
+        url: "/assets/Awareness/(5).jpg",
+        src: "",
+        alt: "Cancer Awareness event 5",
+        caption: "Cancer Awareness Day 5",
+        description: "Community gathering for cancer awareness education"
+      },
+      {
+        id: "awareness_006",
+        url: "/assets/Awareness/(6).jpg",
+        src: "",
+        alt: "Cancer Awareness event 6",
+        caption: "Cancer Awareness Day 6",
+        description: "Community gathering for cancer awareness education"
+      },
+      {
+        id: "awareness_007",
+        url: "/assets/Awareness/(7).jpg",
+        src: "",
+        alt: "Cancer Awareness event 7",
+        caption: "Cancer Awareness Day 7",
+        description: "Community gathering for cancer awareness education"
+      },
+      {
+        id: "awareness_008",
+        url: "/assets/Awareness/(8).jpg",
+        src: "",
+        alt: "Cancer Awareness event 8",
+        caption: "Cancer Awareness Day 8",
+        description: "Community gathering for cancer awareness education"
+      },
+      {
+        id: "awareness_009",
+        url: "/assets/Awareness/(9).jpg",
+        src: "",
+        alt: "Cancer Awareness event 9",
+        caption: "Cancer Awareness Day 9",
+        description: "Community gathering for cancer awareness education"
+      },
+      {
+        id: "awareness_010",
+        url: "/assets/Awareness/(10).jpg",
+        src: "",
+        alt: "Cancer Awareness event 10",
+        caption: "Cancer Awareness Day 10",
+        description: "Community gathering for cancer awareness education"
+      },
+      {
+        id: "awareness_011",
+        url: "/assets/Awareness/(11).jpg",
+        src: "",
+        alt: "Cancer Awareness event 11",
+        caption: "Cancer Awareness Day 11",
+        description: "Community gathering for cancer awareness education"
+      },
+      {
+        id: "awareness_012",
         url: "/assets/Awareness/(12).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 12",
+        caption: "Cancer Awareness Day 12",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 13,
+        id: "awareness_013",
         url: "/assets/Awareness/(13).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 13",
+        caption: "Cancer Awareness Day 13",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 14,
+        id: "awareness_014",
         url: "/assets/Awareness/(14).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 14",
+        caption: "Cancer Awareness Day 14",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 15,
+        id: "awareness_015",
         url: "/assets/Awareness/(15).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 15",
+        caption: "Cancer Awareness Day 15",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 16,
+        id: "awareness_016",
         url: "/assets/Awareness/(16).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 16",
+        caption: "Cancer Awareness Day 16",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 17,
+        id: "awareness_017",
         url: "/assets/Awareness/(17).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 17",
+        caption: "Cancer Awareness Day 17",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 18,
+        id: "awareness_018",
         url: "/assets/Awareness/(18).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 18",
+        caption: "Cancer Awareness Day 18",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 19,
+        id: "awareness_019",
         url: "/assets/Awareness/(19).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 19",
+        caption: "Cancer Awareness Day 19",
         description: "Community gathering for cancer awareness education"
       },
-      
       {
-        id: 20,
+        id: "awareness_020",
         url: "/assets/Awareness/(20).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 20",
+        caption: "Cancer Awareness Day 20",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 21,
+        id: "awareness_021",
         url: "/assets/Awareness/(21).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 21",
+        caption: "Cancer Awareness Day 21",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 22,
+        id: "awareness_022",
         url: "/assets/Awareness/(22).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 22",
+        caption: "Cancer Awareness Day 22",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 23,
+        id: "awareness_023",
         url: "/assets/Awareness/(23).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 23",
+        caption: "Cancer Awareness Day 23",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 24,
+        id: "awareness_024",
         url: "/assets/Awareness/(24).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 24",
+        caption: "Cancer Awareness Day 24",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 25,
+        id: "awareness_025",
         url: "/assets/Awareness/(25).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 25",
+        caption: "Cancer Awareness Day 25",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 26,
+        id: "awareness_026",
         url: "/assets/Awareness/(26).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 26",
+        caption: "Cancer Awareness Day 26",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 27,
+        id: "awareness_027",
         url: "/assets/Awareness/(27).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
-        caption: "Cancer Awareness Day 1",
+        src: "",
+        alt: "Cancer Awareness event 27",
+        caption: "Cancer Awareness Day 27",
         description: "Community gathering for cancer awareness education"
-      },
-
+      }
     ]
   },
   awareness: {
     title: "Day 1",
-    description: "“Cancer Awareness Camp in action 🩺✨ Together with our partners, we are taking one step closer to a cancer-free Kodaikanal.”",
+    description: "Cancer Awareness Camp in action 🩺✨ Together with our partners, we are taking one step closer to a cancer-free Kodaikanal.",
     icon: Calendar,
     color: "from-blue-500 to-blue-700",
     bgColor: "bg-blue-50",
@@ -254,142 +246,125 @@ export const GALLERIES_DATA = {
     },
     images: [
       {
-
-        id: 1,
+        id: "day1_001",
         url: "/assets/Day 1/(19).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
+        src: "",
+        alt: "Cancer Awareness Day 1 event 1",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      
       {
-        id: 1,
+        id: "day1_002",
         url: "/assets/Day 1/(18).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
+        src: "",
+        alt: "Cancer Awareness Day 1 event 2",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 1,
+        id: "day1_003",
         url: "/assets/Day 1/(1).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
+        src: "",
+        alt: "Cancer Awareness Day 1 event 3",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      
       {
-        id: 1,
+        id: "day1_004",
         url: "/assets/Day 1/(17).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
+        src: "",
+        alt: "Cancer Awareness Day 1 event 4",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
       {
-        id: 3,
+        id: "day1_005",
         url: "/assets/Day 1/(3).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
+        src: "",
+        alt: "Cancer Awareness Day 1 event 5",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      
       {
-        id: 4,
+        id: "day1_006",
         url: "/assets/Day 1/(4).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
+        src: "",
+        alt: "Cancer Awareness Day 1 event 6",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      
       {
-        id: 5,
+        id: "day1_007",
         url: "/assets/Day 1/(5).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
+        src: "",
+        alt: "Cancer Awareness Day 1 event 7",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      
-      
-      
       {
-        id: 7,
+        id: "day1_008",
         url: "/assets/Day 1/(7).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
+        src: "",
+        alt: "Cancer Awareness Day 1 event 8",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      
       {
-        id: 8,
+        id: "day1_009",
         url: "/assets/Day 1/(8).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
+        src: "",
+        alt: "Cancer Awareness Day 1 event 9",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      
       {
-        id: 9,
+        id: "day1_010",
         url: "/assets/Day 1/(9).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
+        src: "",
+        alt: "Cancer Awareness Day 1 event 10",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      
       {
-        id: 10,
+        id: "day1_011",
         url: "/assets/Day 1/(10).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
+        src: "",
+        alt: "Cancer Awareness Day 1 event 11",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      
       {
-        id: 11,
+        id: "day1_012",
         url: "/assets/Day 1/(11).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
+        src: "",
+        alt: "Cancer Awareness Day 1 event 12",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      
       {
-        id: 12,
+        id: "day1_013",
         url: "/assets/Day 1/(12).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
+        src: "",
+        alt: "Cancer Awareness Day 1 event 13",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      
       {
-        id: 13,
+        id: "day1_014",
         url: "/assets/Day 1/(13).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
+        src: "",
+        alt: "Cancer Awareness Day 1 event 14",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      
       {
-        id: 15,
+        id: "day1_015",
         url: "/assets/Day 1/(15).jpg",
-        src: "https://i.ibb.co/jvWMpkWp/blob.jpg",
-        alt: "Cancer Awareness event 1",
+        src: "",
+        alt: "Cancer Awareness Day 1 event 15",
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
-      },
-      
-      
+      }
     ]
   },
   survivors: {
@@ -400,11 +375,74 @@ export const GALLERIES_DATA = {
     bgColor: "bg-rose-50",
     textColor: "text-rose-800",
     cardImage: {
-      src: "/assets/day .jpg",
+      src: "/assets/Day 2/(1).jpg",
       alt: "Cancer Survivors Day 2 Card"
     },
     images: [
-
+      {
+        id: "day2_001",
+        url: "/assets/Day 2/(1).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 1",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day2_002",
+        url: "/assets/Day 2/(2).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day2_003",
+        url: "/assets/Day 2/(3).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 3",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day2_004",
+        url: "/assets/Day 2/(4).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 4",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day2_005",
+        url: "/assets/Day 2/(5).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 5",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day2_006",
+        url: "/assets/Day 2/(6).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 6",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day2_007",
+        url: "/assets/Day 2/(7).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 7",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day2_008",
+        url: "/assets/Day 2/(8).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 8",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      }
     ]
   },
   community: {
@@ -418,9 +456,7 @@ export const GALLERIES_DATA = {
       src: "/assets/day 3.jpg",
       alt: "Community Support Day 3 Card"
     },
-    images: [
-
-    ]
+    images: []
   },
   prevention: {
     title: "Day 4",
@@ -433,8 +469,6 @@ export const GALLERIES_DATA = {
       src: "/images/cards/prevention-card.jpg",
       alt: "Cancer Prevention Day 4 Card"
     },
-    images: [
-
-    ]
+    images: []
   }
 };
