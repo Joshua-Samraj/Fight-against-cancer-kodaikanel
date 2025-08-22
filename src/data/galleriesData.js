@@ -377,7 +377,7 @@ export const GALLERIES_DATA = {
   },
   survivors: {
     title: "Day 2",
-    description: "Inspiring narratives from cancer survivors in Kodaikanel, showcasing resilience, courage, and the power of hope.",
+    description: "🌿 Day 2 at Kodaikanal Cancer Camp - more lives touched, more smiles protected💚",
     icon: Calendar,
     color: "from-pink-500 to-rose-600",
     bgColor: "bg-rose-50",
