@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
+import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import Day1Page from './pages/Day1Page';
 import Day2Page from './pages/Day2Page';
@@ -220,6 +221,7 @@ const KadaikanalCancerAwarenessWebsite = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <ImageProtection>
         <div className="min-h-screen">
           <Navigation galleries={GALLERIES_DATA} />
