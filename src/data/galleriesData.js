@@ -576,6 +576,7 @@ export const GALLERIES_DATA = {
       src: "/assets/Day 3/(4).jpg",
       alt: "Community Support Day 3 Card"
     },
+    
     images: [
       {
         id: "day3_011",
