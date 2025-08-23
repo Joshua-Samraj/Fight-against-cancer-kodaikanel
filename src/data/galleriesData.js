@@ -576,11 +576,11 @@ export const GALLERIES_DATA = {
       src: "/assets/Day 3/(4).jpg",
       alt: "Community Support Day 3 Card"
     },
-    
+
     images: [
       {
-        id: "day3_011",
-        url: "/assets/Day 3/New/(1).jpg",
+        id: "day3_014",
+        url: "/assets/Day 3/New/(4).jpg",
         src: "",
         alt: "Cancer Survivors Day 2 event 2",
         caption: "Cancer Survivors Day 2",
@@ -595,6 +595,16 @@ export const GALLERIES_DATA = {
         description: "Inspiring stories from cancer survivors"
       },
       {
+        id: "day3_011",
+        url: "/assets/Day 3/New/(1).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      
+      
+      {
         id: "day3_013",
         url: "/assets/Day 3/New/(3).jpg",
         src: "",
@@ -602,17 +612,10 @@ export const GALLERIES_DATA = {
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
       },
+     
       {
-        id: "day3_014",
-        url: "/assets/Day 3/New/(4).jpg",
-        src: "",
-        alt: "Cancer Survivors Day 2 event 2",
-        caption: "Cancer Survivors Day 2",
-        description: "Inspiring stories from cancer survivors"
-      },
-      {
-        id: "day3_015",
-        url: "/assets/Day 3/New/(5).jpg",
+        id: "day3_010",
+        url: "/assets/Day 3/(10).jpg",
         src: "",
         alt: "Cancer Survivors Day 2 event 2",
         caption: "Cancer Survivors Day 2",
@@ -674,14 +677,7 @@ export const GALLERIES_DATA = {
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
       },
-      {
-        id: "day3_010",
-        url: "/assets/Day 3/(10).jpg",
-        src: "",
-        alt: "Cancer Survivors Day 2 event 2",
-        caption: "Cancer Survivors Day 2",
-        description: "Inspiring stories from cancer survivors"
-      },
+      
       
       {
         id: "day3_001",
