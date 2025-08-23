@@ -530,7 +530,7 @@ export const GALLERIES_DATA = {
         description: "Inspiring stories from cancer survivors"
       }, 
       {
-        id: "day2_021",
+        id: "day2_029",
         url: "/assets/Day 2/(21).jpg",
         src: "",
         alt: "Cancer Survivors Day 2 event 3",
