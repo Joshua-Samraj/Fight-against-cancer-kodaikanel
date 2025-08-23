@@ -253,7 +253,7 @@ export const GALLERIES_DATA = {
         caption: "Cancer Awareness Day 1",
         description: "Community gathering for cancer awareness education"
       },
-      
+
       {
         id: "day1_002",
         url: "/assets/Day 1/(18).jpg",
@@ -453,7 +453,7 @@ export const GALLERIES_DATA = {
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
       },
-      
+
       {
         id: "day2_007",
         url: "/assets/Day 2/(7).jpg",
@@ -478,7 +478,7 @@ export const GALLERIES_DATA = {
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
       },
-      
+
       {
         id: "day2_013",
         url: "/assets/Day 2/(13).jpg",
@@ -487,7 +487,7 @@ export const GALLERIES_DATA = {
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
       },
-      
+
       {
         id: "day2_015",
         url: "/assets/Day 2/(15).jpg",
@@ -504,7 +504,7 @@ export const GALLERIES_DATA = {
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
       },
-      
+
       {
         id: "day2_018",
         url: "/assets/Day 2/(18).jpg",
@@ -528,7 +528,7 @@ export const GALLERIES_DATA = {
         alt: "Cancer Survivors Day 2 event 3",
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
-      }, 
+      },
       {
         id: "day2_029",
         url: "/assets/Day 2/(21).jpg",
@@ -561,8 +561,8 @@ export const GALLERIES_DATA = {
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
       },
-      
-      
+
+
     ]
   },
   community: {
@@ -610,8 +610,8 @@ export const GALLERIES_DATA = {
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
       },
-      
-      
+
+
       {
         id: "day3_013",
         url: "/assets/Day 3/New/(3).jpg",
@@ -620,8 +620,8 @@ export const GALLERIES_DATA = {
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
       },
-     
-      
+
+
       {
         id: "day3_016",
         url: "/assets/Day 3/New/(6).jpg",
@@ -678,8 +678,8 @@ export const GALLERIES_DATA = {
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
       },
-      
-      
+
+
       {
         id: "day3_001",
         url: "/assets/Day 3/(1).jpg",
@@ -752,7 +752,23 @@ export const GALLERIES_DATA = {
         caption: "Cancer Survivors Day 2",
         description: "Inspiring stories from cancer survivors"
       },
-      
+      {
+        id: "day3_111",
+        url: "/assets/Day 3/(11).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day3_112",
+        url: "/assets/Day 3/(12).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+
     ]
   },
   prevention: {

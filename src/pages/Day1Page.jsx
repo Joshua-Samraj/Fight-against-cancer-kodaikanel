@@ -9,7 +9,7 @@ const Day1Page = ({ onImageClick }) => {
 
   if (!gallery || !gallery.images || gallery.images.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 py-12">
+      <div className={`min-h-screen ${gallery?.bgColor || 'bg-gray-50'} py-12`}>
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-gray-800 mb-4">{gallery?.title || 'Day 1'}</h1>
@@ -21,7 +21,7 @@ const Day1Page = ({ onImageClick }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className={`min-h-screen ${gallery?.bgColor || 'bg-gray-50'} py-12`}>
       <div className="container mx-auto px-4">
         {/* Back to Home Button */}
         <Link
