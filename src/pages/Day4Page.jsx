@@ -20,7 +20,6 @@ const Day4Page = ({ onImageClick }) => {
               <p className="font-medium">Coming Soon!</p>
               <p className="text-sm mt-1">Images from Day 4 activities will be uploaded soon.</p>
             </div>
-            
           </div>
         </div>
       </div>

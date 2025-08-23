@@ -573,7 +573,7 @@ export const GALLERIES_DATA = {
     bgColor: "bg-emerald-50",
     textColor: "text-emerald-800",
     cardImage: {
-      src: "/assets/Day 3/(4).jpg",
+      src: "/assets/Day 3/New/(1).jpg",
       alt: "Community Support Day 3 Card"
     },
 
