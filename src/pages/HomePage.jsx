@@ -2,7 +2,7 @@ import React from 'react';
 import GalleryCard from '../components/GalleryCard';
 import HeroSection from '../components/HeroSection';
 
-const HomePage = ({ galleries, onCardClick }) => {
+const HomePage = ({ galleries }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <HeroSection />
@@ -18,13 +18,12 @@ const HomePage = ({ galleries, onCardClick }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-6">
           {Object.entries(galleries).map(([key, gallery]) => (
             <GalleryCard
               key={key}
               galleryKey={key}
               gallery={gallery}
-              onCardClick={onCardClick}
             />
           ))}
         </div>

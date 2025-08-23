@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
-import GalleryPage from './pages/GalleryPage';
+import Day1Page from './pages/Day1Page';
+import Day2Page from './pages/Day2Page';
+import Day3Page from './pages/Day3Page';
+import Day4Page from './pages/Day4Page';
+import AwarenessPage from './pages/AwarenessPage';
 import ImageViewer from './components/ImageViewer';
 import Footer from './components/Footer';
 import CustomStyles from './components/CustomStyles';
@@ -9,9 +14,9 @@ import ImageProtection from './components/ImageProtection';
 import { GALLERIES_DATA } from './data/galleriesData';
 
 const KadaikanalCancerAwarenessWebsite = () => {
-  const [currentPage, setCurrentPage] = useState('home');
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentGalleryKey, setCurrentGalleryKey] = useState('');
   const [imageZoom, setImageZoom] = useState(1);
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
@@ -32,24 +37,9 @@ const KadaikanalCancerAwarenessWebsite = () => {
   }, []);
 
   // Event Handlers - Define all handlers first
-  const handlePageChange = useCallback((page) => {
-    setCurrentPage(page);
-    // Close image viewer and reset all states when changing pages
-    setSelectedImage(null);
-    setCurrentImageIndex(0);
-    setImageZoom(1);
-    setImagePosition({ x: 0, y: 0 });
-    setIsAutoplay(false);
-    setImageError(false);
-    setLoading(false);
-    setIsTransitioning(false);
-    setIsDragging(false);
-    scrollToTop();
-  }, [scrollToTop]);
-
   const handleCardClick = useCallback((galleryKey) => {
-    setCurrentPage(galleryKey);
-    // Close image viewer and reset all states when changing pages
+    // This will be handled by React Router navigation
+    // Just close any open image viewer
     setSelectedImage(null);
     setCurrentImageIndex(0);
     setImageZoom(1);
@@ -62,9 +52,10 @@ const KadaikanalCancerAwarenessWebsite = () => {
     scrollToTop();
   }, [scrollToTop]);
 
-  const handleImageClick = useCallback((image, index) => {
+  const handleImageClick = useCallback((image, index, galleryKey) => {
     setSelectedImage(image);
     setCurrentImageIndex(index);
+    setCurrentGalleryKey(galleryKey);
     setImageZoom(1);
     setImagePosition({ x: 0, y: 0 });
     setImageError(false);
@@ -82,7 +73,7 @@ const KadaikanalCancerAwarenessWebsite = () => {
   }, []);
 
   const handleNavigateImage = useCallback((direction) => {
-    const currentGallery = GALLERIES_DATA[currentPage];
+    const currentGallery = GALLERIES_DATA[currentGalleryKey];
     if (!currentGallery) return;
 
     const newIndex = currentImageIndex + direction;
@@ -93,7 +84,7 @@ const KadaikanalCancerAwarenessWebsite = () => {
       setImageError(false);
       setLoading(true);
     }
-  }, [currentPage, currentImageIndex]);
+  }, [currentGalleryKey, currentImageIndex]);
 
   const handleZoomIn = useCallback(() => {
     setImageZoom(prev => Math.min(prev + 0.5, 4));
@@ -155,12 +146,12 @@ const KadaikanalCancerAwarenessWebsite = () => {
 
   // Auto-play functionality with transition
   useEffect(() => {
-    if (isAutoplay && selectedImage) {
-      const currentGallery = GALLERIES_DATA[currentPage];
+    if (isAutoplay && selectedImage && currentGalleryKey) {
+      const currentGallery = GALLERIES_DATA[currentGalleryKey];
       if (currentGallery && currentGallery.images && currentGallery.images.length > 1) {
         autoplayRef.current = setInterval(() => {
           setIsTransitioning(true);
-          
+
           // After transition starts, change the image
           setTimeout(() => {
             setCurrentImageIndex(prev =>
@@ -170,7 +161,7 @@ const KadaikanalCancerAwarenessWebsite = () => {
             setImagePosition({ x: 0, y: 0 });
             setImageError(false);
             setLoading(true);
-            
+
             // End transition after image change
             setTimeout(() => {
               setIsTransitioning(false);
@@ -188,28 +179,15 @@ const KadaikanalCancerAwarenessWebsite = () => {
         clearInterval(autoplayRef.current);
       }
     };
-  }, [isAutoplay, selectedImage, currentPage]);
+  }, [isAutoplay, selectedImage, currentGalleryKey]);
 
-  // Reset image viewer state when page changes
-  useEffect(() => {
-    // Close image viewer and reset all states when page changes
-    setSelectedImage(null);
-    setCurrentImageIndex(0);
-    setImageZoom(1);
-    setImagePosition({ x: 0, y: 0 });
-    setIsAutoplay(false);
-    setImageError(false);
-    setLoading(false);
-    setIsTransitioning(false);
-    setIsDragging(false);
-    scrollToTop();
-  }, [currentPage, scrollToTop]);
+  // This effect is no longer needed as we're using React Router
 
   // Keyboard navigation
   useEffect(() => {
     const handleKeyPress = (e) => {
-      if (selectedImage) {
-        const currentGallery = GALLERIES_DATA[currentPage];
+      if (selectedImage && currentGalleryKey) {
+        const currentGallery = GALLERIES_DATA[currentGalleryKey];
         if (!currentGallery) return;
 
         switch (e.key) {
@@ -238,63 +216,98 @@ const KadaikanalCancerAwarenessWebsite = () => {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [selectedImage, currentImageIndex, currentPage, handleCloseImageViewer, handleNavigateImage, handleZoomIn, handleZoomOut, handleResetZoom]);
+  }, [selectedImage, currentImageIndex, currentGalleryKey, handleCloseImageViewer, handleNavigateImage, handleZoomIn, handleZoomOut, handleResetZoom]);
 
   return (
-    <ImageProtection>
-      <div className="min-h-screen">
-        <Navigation
-          currentPage={currentPage}
-          onPageChange={handlePageChange}
-          galleries={GALLERIES_DATA}
-        />
+    <Router>
+      <ImageProtection>
+        <div className="min-h-screen">
+          <Navigation galleries={GALLERIES_DATA} />
 
-        {currentPage === 'home' ? (
-          <HomePage
-            galleries={GALLERIES_DATA}
-            onCardClick={handleCardClick}
-          />
-        ) : (
-          <GalleryPage
-            currentPage={currentPage}
-            galleries={GALLERIES_DATA}
-            onPageChange={handlePageChange}
-            onImageClick={handleImageClick}
-          />
-        )}
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <HomePage
+                  galleries={GALLERIES_DATA}
+                />
+              }
+            />
+            <Route
+              path="/awareness"
+              element={
+                <AwarenessPage
+                  onImageClick={(image, index) => handleImageClick(image, index, 'Awareness')}
+                />
+              }
+            />
+            <Route
+              path="/day1"
+              element={
+                <Day1Page
+                  onImageClick={(image, index) => handleImageClick(image, index, 'awareness')}
+                />
+              }
+            />
+            <Route
+              path="/day2"
+              element={
+                <Day2Page
+                  onImageClick={(image, index) => handleImageClick(image, index, 'survivors')}
+                />
+              }
+            />
+            <Route
+              path="/day3"
+              element={
+                <Day3Page
+                  onImageClick={(image, index) => handleImageClick(image, index, 'community')}
+                />
+              }
+            />
+            <Route
+              path="/day4"
+              element={
+                <Day4Page
+                  onImageClick={(image, index) => handleImageClick(image, index, 'prevention')}
+                />
+              }
+            />
+          </Routes>
 
-        {selectedImage && (
-          <ImageViewer
-            selectedImage={selectedImage}
-            currentImageIndex={currentImageIndex}
-            galleries={GALLERIES_DATA}
-            currentPage={currentPage}
-            imageZoom={imageZoom}
-            imagePosition={imagePosition}
-            isDragging={isDragging}
-            isAutoplay={isAutoplay}
-            loading={loading}
-            imageError={imageError}
-            isTransitioning={isTransitioning}
-            onClose={handleCloseImageViewer}
-            onNavigate={handleNavigateImage}
-            onZoomIn={handleZoomIn}
-            onZoomOut={handleZoomOut}
-            onResetZoom={handleResetZoom}
-            onAutoplayToggle={handleAutoplayToggle}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-            onImageLoad={handleImageLoad}
-            onImageError={handleImageError}
-            onImageIndexChange={handleImageIndexChange}
-          />
-        )}
+          {selectedImage && currentGalleryKey && (
+            <ImageViewer
+              selectedImage={selectedImage}
+              currentImageIndex={currentImageIndex}
+              galleries={GALLERIES_DATA}
+              currentPage={currentGalleryKey}
+              imageZoom={imageZoom}
+              imagePosition={imagePosition}
+              isDragging={isDragging}
+              isAutoplay={isAutoplay}
+              loading={loading}
+              imageError={imageError}
+              isTransitioning={isTransitioning}
+              onClose={handleCloseImageViewer}
+              onNavigate={handleNavigateImage}
+              onZoomIn={handleZoomIn}
+              onZoomOut={handleZoomOut}
+              onResetZoom={handleResetZoom}
+              onAutoplayToggle={handleAutoplayToggle}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onImageLoad={handleImageLoad}
+              onImageError={handleImageError}
+              onImageIndexChange={handleImageIndexChange}
+            />
+          )}
 
-        <Footer />
-        <CustomStyles />
-      </div>
-    </ImageProtection>
+          <Footer />
+          <CustomStyles />
+        </div>
+      </ImageProtection>
+    </Router>
   );
 };
 

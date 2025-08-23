@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Home, MapPin, Calendar, ChevronUp } from 'lucide-react';
 
-const Navigation = ({ currentPage, onPageChange, galleries }) => {
+const Navigation = ({ galleries }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const location = useLocation();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handlePageChange = (page) => {
-    onPageChange(page);
+  const handleMenuClose = () => {
     setIsMobileMenuOpen(false); // Close mobile menu after navigation
   };
 
@@ -69,7 +70,7 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
       </div>
 
       {/* Main Navigation - Sticky */}
-      <nav className="bg-white shadow-sm border-b sticky top-0 z-40">
+      <nav className="bg-white shadow-sm border-t border-b border-gray-200 sticky top-0 z-40">
 
         <div className="container mx-auto px-4 py-3">
           {/* Desktop Navigation */}
@@ -136,32 +137,69 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
 
               {/* <div className="h-8 w-px bg-gray-300"></div> */}
 
-              <button
-                onClick={() => handlePageChange('home')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full transition-colors ${currentPage === 'home'
+              <Link
+                to="/"
+                className={`flex items-center gap-2 px-4 py-2 rounded-full transition-colors ${location.pathname === '/'
                   ? 'bg-blue-100 text-blue-700'
                   : 'hover:bg-gray-100 text-gray-600'
                   }`}
               >
                 <Home size={20} />
                 <span className="font-medium">Home</span>
-              </button>
+              </Link>
             </div>
 
             <div className="flex gap-2">
-              {Object.entries(galleries).map(([key, gallery]) => (
-                <button
-                  key={key}
-                  onClick={() => handlePageChange(key)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${currentPage === key
-                    ? `${gallery.bgColor} ${gallery.textColor}`
-                    : 'hover:bg-gray-100 text-gray-600'
-                    }`}
-                >
-                  <gallery.icon size={16} className="inline mr-2" />
-                  {gallery.title}
-                </button>
-              ))}
+              <Link
+                to="/awareness"
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${location.pathname === '/awareness'
+                  ? 'bg-blue-100 text-blue-800'
+                  : 'hover:bg-gray-100 text-gray-600'
+                  }`}
+              >
+                <Calendar size={16} className="inline mr-2" />
+                Awareness
+              </Link>
+              <Link
+                to="/day1"
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${location.pathname === '/day1'
+                  ? 'bg-blue-100 text-blue-800'
+                  : 'hover:bg-gray-100 text-gray-600'
+                  }`}
+              >
+                <Calendar size={16} className="inline mr-2" />
+                Day 1
+              </Link>
+              <Link
+                to="/day2"
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${location.pathname === '/day2'
+                  ? 'bg-rose-100 text-rose-800'
+                  : 'hover:bg-gray-100 text-gray-600'
+                  }`}
+              >
+                <Calendar size={16} className="inline mr-2" />
+                Day 2
+              </Link>
+              <Link
+                to="/day3"
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${location.pathname === '/day3'
+                  ? 'bg-emerald-100 text-emerald-800'
+                  : 'hover:bg-gray-100 text-gray-600'
+                  }`}
+              >
+                <Calendar size={16} className="inline mr-2" />
+                Day 3
+              </Link>
+              <Link
+                to="/day4"
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${location.pathname === '/day4'
+                  ? 'bg-indigo-100 text-indigo-800'
+                  : 'hover:bg-gray-100 text-gray-600'
+                  }`}
+              >
+                <Calendar size={16} className="inline mr-2" />
+                Day 4
+              </Link>
             </div>
           </div>
 
@@ -210,16 +248,16 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
                 </div>
               </div>
 
-              <button
-                onClick={() => handlePageChange('home')}
-                className={`flex items-center gap-2 px-3 py-2 rounded-full transition-colors ${currentPage === 'home'
+              <Link
+                to="/"
+                className={`flex items-center gap-2 px-3 py-2 rounded-full transition-colors ${location.pathname === '/'
                   ? 'bg-blue-100 text-blue-700'
                   : 'hover:bg-gray-100 text-gray-600'
                   }`}
               >
                 <Home size={18} />
                 <span className="font-medium text-sm">Home</span>
-              </button>
+              </Link>
             </div>
 
             <button
@@ -254,39 +292,104 @@ const Navigation = ({ currentPage, onPageChange, galleries }) => {
             </div> */}
 
               <div className="flex flex-col gap-2">
-                {Object.entries(galleries).map(([key, gallery], index) => (
-                  <button
-                    key={key}
-                    onClick={() => handlePageChange(key)}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all duration-300 transform ${isMobileMenuOpen
-                      ? 'translate-y-0 opacity-100'
-                      : 'translate-y-2 opacity-0'
-                      } ${currentPage === key
-                        ? `${gallery.bgColor} ${gallery.textColor}`
-                        : 'hover:bg-gray-100 text-gray-600'
-                      }`}
-                    style={{
-                      transitionDelay: isMobileMenuOpen ? `${index * 50}ms` : '0ms'
-                    }}
-                  >
-                    <gallery.icon size={20} />
-                    <span className="font-medium">{gallery.title}</span>
-                  </button>
-                ))}
+                <Link
+                  to="/awareness"
+                  onClick={handleMenuClose}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all duration-300 transform ${isMobileMenuOpen
+                    ? 'translate-y-0 opacity-100'
+                    : 'translate-y-2 opacity-0'
+                    } ${location.pathname === '/awareness'
+                      ? 'bg-blue-100 text-blue-800'
+                      : 'hover:bg-gray-100 text-gray-600'
+                    }`}
+                  style={{
+                    transitionDelay: isMobileMenuOpen ? '0ms' : '0ms'
+                  }}
+                >
+                  <Calendar size={20} />
+                  <span className="font-medium">Awareness</span>
+                </Link>
+                <Link
+                  to="/day1"
+                  onClick={handleMenuClose}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all duration-300 transform ${isMobileMenuOpen
+                    ? 'translate-y-0 opacity-100'
+                    : 'translate-y-2 opacity-0'
+                    } ${location.pathname === '/day1'
+                      ? 'bg-blue-100 text-blue-800'
+                      : 'hover:bg-gray-100 text-gray-600'
+                    }`}
+                  style={{
+                    transitionDelay: isMobileMenuOpen ? '50ms' : '0ms'
+                  }}
+                >
+                  <Calendar size={20} />
+                  <span className="font-medium">Day 1</span>
+                </Link>
+                <Link
+                  to="/day2"
+                  onClick={handleMenuClose}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all duration-300 transform ${isMobileMenuOpen
+                    ? 'translate-y-0 opacity-100'
+                    : 'translate-y-2 opacity-0'
+                    } ${location.pathname === '/day2'
+                      ? 'bg-rose-100 text-rose-800'
+                      : 'hover:bg-gray-100 text-gray-600'
+                    }`}
+                  style={{
+                    transitionDelay: isMobileMenuOpen ? '100ms' : '0ms'
+                  }}
+                >
+                  <Calendar size={20} />
+                  <span className="font-medium">Day 2</span>
+                </Link>
+                <Link
+                  to="/day3"
+                  onClick={handleMenuClose}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all duration-300 transform ${isMobileMenuOpen
+                    ? 'translate-y-0 opacity-100'
+                    : 'translate-y-2 opacity-0'
+                    } ${location.pathname === '/day3'
+                      ? 'bg-emerald-100 text-emerald-800'
+                      : 'hover:bg-gray-100 text-gray-600'
+                    }`}
+                  style={{
+                    transitionDelay: isMobileMenuOpen ? '150ms' : '0ms'
+                  }}
+                >
+                  <Calendar size={20} />
+                  <span className="font-medium">Day 3</span>
+                </Link>
+                <Link
+                  to="/day4"
+                  onClick={handleMenuClose}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all duration-300 transform ${isMobileMenuOpen
+                    ? 'translate-y-0 opacity-100'
+                    : 'translate-y-2 opacity-0'
+                    } ${location.pathname === '/day4'
+                      ? 'bg-indigo-100 text-indigo-800'
+                      : 'hover:bg-gray-100 text-gray-600'
+                    }`}
+                  style={{
+                    transitionDelay: isMobileMenuOpen ? '200ms' : '0ms'
+                  }}
+                >
+                  <Calendar size={20} />
+                  <span className="font-medium">Day 4</span>
+                </Link>
               </div>
             </div>
           </div>
-          </div>
+        </div>
       </nav>
 
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform ${
-          showScrollTop 
-            ? 'translate-y-0 opacity-100 scale-100' 
-            : 'translate-y-16 opacity-0 scale-75 pointer-events-none'
-        }`}
+        className={`fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform ${showScrollTop
+          ? 'translate-y-0 opacity-100 scale-100'
+          : 'translate-y-16 opacity-0 scale-75 pointer-events-none'
+          }`}
         aria-label="Scroll to top"
       >
         <ChevronUp size={24} />

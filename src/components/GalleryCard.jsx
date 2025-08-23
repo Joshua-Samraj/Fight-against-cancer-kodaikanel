@@ -1,12 +1,31 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const GalleryCard = ({ galleryKey, gallery, onCardClick }) => {
+const GalleryCard = ({ galleryKey, gallery }) => {
   const cardImage = gallery.cardImage;
   
+  // Map gallery keys to routes
+  const getRouteForGallery = (key) => {
+    switch (key) {
+      case 'Awareness':
+        return '/awareness';
+      case 'awareness':
+        return '/day1';
+      case 'survivors':
+        return '/day2';
+      case 'community':
+        return '/day3';
+      case 'prevention':
+        return '/day4';
+      default:
+        return '/';
+    }
+  };
+  
   return (
-    <div
-      onClick={() => onCardClick(galleryKey)}
-      className="group cursor-pointer transform transition-all duration-500 hover:scale-105 active:scale-95"
+    <Link
+      to={getRouteForGallery(galleryKey)}
+      className="group cursor-pointer transform transition-all duration-500 hover:scale-105 active:scale-95 block"
     >
       <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden h-80 sm:h-80 md:h-80">
         {/* Image Header */}
@@ -55,7 +74,7 @@ const GalleryCard = ({ galleryKey, gallery, onCardClick }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
