@@ -52,7 +52,7 @@ const GalleryCard = ({ galleryKey, gallery }) => {
           </div>
           
           {/* Overlay with title */}
-          <div className="absolute inset-0 bg-black/40 flex items-end">
+          <div className="absolute inset-0 bg-black/30 flex items-end">
             <div className="p-3 sm:p-4 text-white w-full">
               <h3 className="text-lg sm:text-xl font-bold mb-1">{gallery.title} </h3>
               <span className="text-xs sm:text-sm opacity-90">

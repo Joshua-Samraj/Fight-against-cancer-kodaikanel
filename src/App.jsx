@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import ScrollToTop from './components/ScrollToTop';
@@ -8,7 +8,7 @@ import Day2Page from './pages/Day2Page';
 import Day3Page from './pages/Day3Page';
 import Day4Page from './pages/Day4Page';
 import AwarenessPage from './pages/AwarenessPage';
-import ImageViewer from './components/ImageViewer';
+import NewImageViewer from './components/NewImageViewer';
 import Footer from './components/Footer';
 import CustomStyles from './components/CustomStyles';
 import ImageProtection from './components/ImageProtection';
@@ -18,198 +18,55 @@ const KadaikanalCancerAwarenessWebsite = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentGalleryKey, setCurrentGalleryKey] = useState('');
-  const [imageZoom, setImageZoom] = useState(1);
-  const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-  const [isAutoplay, setIsAutoplay] = useState(true);
-  const [imageError, setImageError] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const autoplayRef = useRef(null);
+  const [currentGalleryImages, setCurrentGalleryImages] = useState([]);
 
-  // Scroll to top function
-  const scrollToTop = useCallback(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
-  }, []);
-
-  // Event Handlers - Define all handlers first
-  const handleCardClick = useCallback((galleryKey) => {
-    // This will be handled by React Router navigation
-    // Just close any open image viewer
-    setSelectedImage(null);
-    setCurrentImageIndex(0);
-    setImageZoom(1);
-    setImagePosition({ x: 0, y: 0 });
-    setIsAutoplay(false);
-    setImageError(false);
-    setLoading(false);
-    setIsTransitioning(false);
-    setIsDragging(false);
-    scrollToTop();
-  }, [scrollToTop]);
-
+  // Event Handlers for new ImageViewer
   const handleImageClick = useCallback((image, index, galleryKey) => {
-    setSelectedImage(image);
-    setCurrentImageIndex(index);
-    setCurrentGalleryKey(galleryKey);
-    setImageZoom(1);
-    setImagePosition({ x: 0, y: 0 });
-    setImageError(false);
-    setLoading(true);
-    setIsAutoplay(true); // Enable autoplay by default
-    setIsTransitioning(false);
+    const gallery = GALLERIES_DATA[galleryKey];
+    if (gallery && gallery.images) {
+      setSelectedImage(image);
+      setCurrentImageIndex(index);
+      setCurrentGalleryKey(galleryKey);
+      setCurrentGalleryImages(gallery.images);
+    }
   }, []);
 
   const handleCloseImageViewer = useCallback(() => {
     setSelectedImage(null);
-    setIsAutoplay(false);
-    setImageZoom(1);
-    setImagePosition({ x: 0, y: 0 });
-    setIsTransitioning(false);
+    setCurrentImageIndex(0);
+    setCurrentGalleryKey('');
+    setCurrentGalleryImages([]);
   }, []);
 
-  const handleNavigateImage = useCallback((direction) => {
-    const currentGallery = GALLERIES_DATA[currentGalleryKey];
-    if (!currentGallery) return;
-
-    const newIndex = currentImageIndex + direction;
-    if (newIndex >= 0 && newIndex < currentGallery.images.length) {
-      setCurrentImageIndex(newIndex);
-      setImageZoom(1);
-      setImagePosition({ x: 0, y: 0 });
-      setImageError(false);
-      setLoading(true);
+  const handleNextImage = useCallback(() => {
+    if (currentGalleryImages.length > 0) {
+      const nextIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+      setCurrentImageIndex(nextIndex);
+      setSelectedImage(currentGalleryImages[nextIndex]);
     }
-  }, [currentGalleryKey, currentImageIndex]);
+  }, [currentImageIndex, currentGalleryImages]);
 
-  const handleZoomIn = useCallback(() => {
-    setImageZoom(prev => Math.min(prev + 0.5, 4));
-  }, []);
-
-  const handleZoomOut = useCallback(() => {
-    setImageZoom(prev => Math.max(prev - 0.5, 0.5));
-  }, []);
-
-  const handleResetZoom = useCallback(() => {
-    setImageZoom(1);
-    setImagePosition({ x: 0, y: 0 });
-  }, []);
-
-  const handleAutoplayToggle = useCallback(() => {
-    setIsAutoplay(prev => !prev);
-  }, []);
-
-  const handleMouseDown = useCallback((e) => {
-    if (imageZoom > 1) {
-      setIsDragging(true);
-      setDragStart({
-        x: e.clientX - imagePosition.x,
-        y: e.clientY - imagePosition.y
-      });
+  const handlePrevImage = useCallback(() => {
+    if (currentGalleryImages.length > 0) {
+      const prevIndex = currentImageIndex === 0 ? currentGalleryImages.length - 1 : currentImageIndex - 1;
+      setCurrentImageIndex(prevIndex);
+      setSelectedImage(currentGalleryImages[prevIndex]);
     }
-  }, [imageZoom, imagePosition.x, imagePosition.y]);
+  }, [currentImageIndex, currentGalleryImages]);
 
-  const handleMouseMove = useCallback((e) => {
-    if (isDragging && imageZoom > 1) {
-      setImagePosition({
-        x: e.clientX - dragStart.x,
-        y: e.clientY - dragStart.y
-      });
-    }
-  }, [isDragging, imageZoom, dragStart.x, dragStart.y]);
-
-  const handleMouseUp = useCallback(() => {
-    setIsDragging(false);
-  }, []);
-
-  const handleImageLoad = useCallback(() => {
-    setLoading(false);
-    setImageError(false);
-  }, []);
-
-  const handleImageError = useCallback(() => {
-    setLoading(false);
-    setImageError(true);
-  }, []);
-
-  const handleImageIndexChange = useCallback((index) => {
-    setCurrentImageIndex(index);
-    setImageZoom(1);
-    setImagePosition({ x: 0, y: 0 });
-    setImageError(false);
-    setLoading(true);
-  }, []);
-
-  // Auto-play functionality with transition
-  useEffect(() => {
-    if (isAutoplay && selectedImage && currentGalleryKey) {
-      const currentGallery = GALLERIES_DATA[currentGalleryKey];
-      if (currentGallery && currentGallery.images && currentGallery.images.length > 1) {
-        autoplayRef.current = setInterval(() => {
-          setIsTransitioning(true);
-
-          // After transition starts, change the image
-          setTimeout(() => {
-            setCurrentImageIndex(prev =>
-              prev === currentGallery.images.length - 1 ? 0 : prev + 1
-            );
-            setImageZoom(1);
-            setImagePosition({ x: 0, y: 0 });
-            setImageError(false);
-            setLoading(true);
-
-            // End transition after image change
-            setTimeout(() => {
-              setIsTransitioning(false);
-            }, 300);
-          }, 300);
-        }, 4000); // Increased interval to account for transition time
-      }
-    } else {
-      if (autoplayRef.current) {
-        clearInterval(autoplayRef.current);
-      }
-    }
-    return () => {
-      if (autoplayRef.current) {
-        clearInterval(autoplayRef.current);
-      }
-    };
-  }, [isAutoplay, selectedImage, currentGalleryKey]);
-
-  // This effect is no longer needed as we're using React Router
-
-  // Keyboard navigation
+  // Keyboard navigation for new ImageViewer
   useEffect(() => {
     const handleKeyPress = (e) => {
-      if (selectedImage && currentGalleryKey) {
-        const currentGallery = GALLERIES_DATA[currentGalleryKey];
-        if (!currentGallery) return;
-
+      if (selectedImage) {
         switch (e.key) {
           case 'Escape':
             handleCloseImageViewer();
             break;
           case 'ArrowLeft':
-            handleNavigateImage(-1);
+            handlePrevImage();
             break;
           case 'ArrowRight':
-            handleNavigateImage(1);
-            break;
-          case '+':
-          case '=':
-            handleZoomIn();
-            break;
-          case '-':
-            handleZoomOut();
-            break;
-          case '0':
-            handleResetZoom();
+            handleNextImage();
             break;
         }
       }
@@ -217,13 +74,13 @@ const KadaikanalCancerAwarenessWebsite = () => {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [selectedImage, currentImageIndex, currentGalleryKey, handleCloseImageViewer, handleNavigateImage, handleZoomIn, handleZoomOut, handleResetZoom]);
+  }, [selectedImage, handleCloseImageViewer, handleNextImage, handlePrevImage]);
 
   return (
     <Router>
       <ScrollToTop />
       <ImageProtection>
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-white">
           <Navigation galleries={GALLERIES_DATA} />
 
           <Routes>
@@ -277,31 +134,15 @@ const KadaikanalCancerAwarenessWebsite = () => {
             />
           </Routes>
 
-          {selectedImage && currentGalleryKey && (
-            <ImageViewer
-              selectedImage={selectedImage}
-              currentImageIndex={currentImageIndex}
-              galleries={GALLERIES_DATA}
-              currentPage={currentGalleryKey}
-              imageZoom={imageZoom}
-              imagePosition={imagePosition}
-              isDragging={isDragging}
-              isAutoplay={isAutoplay}
-              loading={loading}
-              imageError={imageError}
-              isTransitioning={isTransitioning}
+          {selectedImage && (
+            <NewImageViewer
+              imageUrl={selectedImage.url}
+              imageTitle={selectedImage.caption || selectedImage.alt || 'Image'}
               onClose={handleCloseImageViewer}
-              onNavigate={handleNavigateImage}
-              onZoomIn={handleZoomIn}
-              onZoomOut={handleZoomOut}
-              onResetZoom={handleResetZoom}
-              onAutoplayToggle={handleAutoplayToggle}
-              onMouseDown={handleMouseDown}
-              onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUp}
-              onImageLoad={handleImageLoad}
-              onImageError={handleImageError}
-              onImageIndexChange={handleImageIndexChange}
+              onNext={handleNextImage}
+              onPrev={handlePrevImage}
+              currentIndex={currentImageIndex}
+              totalImages={currentGalleryImages.length}
             />
           )}
 
