@@ -773,7 +773,7 @@ export const GALLERIES_DATA = {
   },
   prevention: {
     title: "Day 4",
-    description: "Promoting healthy lifestyles, preventive measures, and wellness practices to reduce cancer risk in our community.",
+    description: "Closing our Cancer Medical Camp with gratitude 🙏Together, we have touched many lives with care and awareness.🎉 Today also marks Pen Nalam Hospital’s 16th anniversary – a milestone of compassion and commitment.",
     icon: Calendar,
     color: "from-purple-500 to-indigo-600",
     bgColor: "bg-blue-100",
