@@ -776,12 +776,173 @@ export const GALLERIES_DATA = {
     description: "Promoting healthy lifestyles, preventive measures, and wellness practices to reduce cancer risk in our community.",
     icon: Calendar,
     color: "from-purple-500 to-indigo-600",
-    bgColor: "bg-indigo-50",
+    bgColor: "bg-blue-100",
     textColor: "text-indigo-800",
     cardImage: {
-      src: "/images/cards/prevention-card.jpg",
+      src: "/assets/Day 4/(11).jpg",
       alt: "Cancer Prevention Day 4 Card"
     },
-    images: []
+    images: [
+      {
+        id: "day4_001",
+        url: "/assets/Day 4/(1).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_002",
+        url: "/assets/Day 4/(2).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_003",
+        url: "/assets/Day 4/(3).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_004",
+        url: "/assets/Day 4/(4).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_005",
+        url: "/assets/Day 4/(5).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_006",
+        url: "/assets/Day 4/(6).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_007",
+        url: "/assets/Day 4/(7).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_008",
+        url: "/assets/Day 4/(8).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_009",
+        url: "/assets/Day 4/(9).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_010",
+        url: "/assets/Day 4/(10).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_011",
+        url: "/assets/Day 4/(11).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_012",
+        url: "/assets/Day 4/(12).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_013",
+        url: "/assets/Day 4/(13).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_014",
+        url: "/assets/Day 4/(20).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_015",
+        url: "/assets/Day 4/(15).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_016",
+        url: "/assets/Day 4/(16).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_017",
+        url: "/assets/Day 4/(17).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_018",
+        url: "/assets/Day 4/(18).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_019",
+        url: "/assets/Day 4/(19).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+      {
+        id: "day4_020",
+        url: "/assets/Day 4/(14).jpg",
+        src: "",
+        alt: "Cancer Survivors Day 2 event 2",
+        caption: "Cancer Survivors Day 2",
+        description: "Inspiring stories from cancer survivors"
+      },
+    ]
   }
 };
