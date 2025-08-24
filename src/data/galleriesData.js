@@ -944,6 +944,14 @@ export const GALLERIES_DATA = {
         caption: "Cancer Survivors Day 4",
         description: "Inspiring stories from cancer survivors"
       },
+      {
+        id: "day4_021",
+        url: "/assets/Day 4/21.jpg",
+        src: "",
+        alt: "Cancer Survivors Day 4 event 2",
+        caption: "Cancer Survivors Day 4",
+        description: "Inspiring stories from cancer survivors"
+      },
     ]
   }
 };
